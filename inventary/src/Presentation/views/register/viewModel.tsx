@@ -3,9 +3,9 @@ import React, { useState } from 'react'
 const RegisterViewModel = () => { 
     const [values, setValues] = useState({ 
         name: '', 
-        lastname: '', 
-        phone: '', 
-        email: '', 
+        description: '', 
+        price: '', 
+        stock: '', 
     }); 
  
     const onChange = (property: string, value: any) => { 

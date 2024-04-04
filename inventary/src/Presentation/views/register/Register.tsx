@@ -5,11 +5,15 @@ import { RoundedButton } from '../../component/RoundedButton';
 import useViewModel from './viewModel'; 
 import { CustomTextInput } from '../../component/CustomTextInput'; 
 import styles from './Styles'
- 
+import { useNavigation } from '@react-navigation/native'; 
+import { StackNavigationProp } from '@react-navigation/stack'; 
+import { RootStackParamList } from '../../../../App';
+
 export const RegisterScreen = () => { 
-  const { name, lastname, phone, email, onChange, 
+  const { name, description, stock, price, onChange, 
 register } = useViewModel(); 
- 
+const navigation = 
+useNavigation<StackNavigationProp<RootStackParamList>>(); 
   return ( 
     <View style={styles.container}> 
       <Image 
@@ -33,35 +37,40 @@ register } = useViewModel();
           image={require('../../../../assets/desc.png')} 
           placeholder='Descripcion' 
           keyboardType='default' 
-          property='lastname' 
+          property='description' 
           onChangeText={onChange} 
-          value={lastname} 
+          value={description} 
         /> 
  
         <CustomTextInput 
           image={require('../../../../assets/pre.png')} 
           placeholder='Precio' 
           keyboardType='numeric' 
-          property='email' 
+          property='price' 
           onChangeText={onChange} 
-          value={email} 
+          value={price} 
         /> 
  
         <CustomTextInput 
           image={require('../../../../assets/stock.png')} 
           placeholder='Stock' 
           keyboardType='numeric' 
-          property='phone' 
+          property='stock' 
           onChangeText={onChange} 
-          value={phone} 
+          value={stock} 
         /> 
        
         <View style={{ marginTop: 30 }}> 
           <RoundedButton text='CONFIRMAR' onPress={() => register()} /> 
         </View> 
- 
+        <View style={styles.formRegister}>
+    <TouchableOpacity onPress={() => navigation.navigate('ListProdScreen')}> 
+      <Text style={styles.formRegisterText}>Mostrar Productos</Text> 
+    </TouchableOpacity>
+  </View>
       </View> 
     </View> 
   ); 
 }  
  
+export default RegisterScreen

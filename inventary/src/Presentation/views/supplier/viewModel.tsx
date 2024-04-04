@@ -1,11 +1,11 @@
 import React, { useState } from 'react' 
  
-const RegistersupViewModel = () => { 
+const SupplierViewModel = () => { 
     const [values, setValues] = useState({ 
-        name:'',
-        description:'' , 
-        price:'', 
-        stock:'', 
+        name: '', 
+        direccion: '', 
+        correo: '', 
+        telefono: '', 
     }); 
  
     const onChange = (property: string, value: any) => { 
@@ -23,4 +23,4 @@ const RegistersupViewModel = () => {
     } 
 } 
  
-export default RegistersupViewModel; 
+export default SupplierViewModel; 

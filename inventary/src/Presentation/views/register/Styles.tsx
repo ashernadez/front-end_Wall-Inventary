@@ -15,8 +15,8 @@ const RegisterStyles = StyleSheet.create({
    
     form: { 
       width: '100%', 
-      height: '85%', 
-      backgroundColor: 'white', 
+      height: '70%', 
+      backgroundColor: '#E7EAEC', 
       position: 'absolute', 
       bottom: 0, 
       borderTopLeftRadius: 40, 
@@ -55,9 +55,9 @@ const RegisterStyles = StyleSheet.create({
    
     formRegisterText: { 
       fontStyle: 'italic', 
-      color: 'orange', 
+      color: '#215598', 
       borderBottomWidth: 1, 
-      borderBottomColor: 'orange', 
+      borderBottomColor: '#215598', 
       fontWeight: 'bold', 
       marginLeft: 10, 
     }, 

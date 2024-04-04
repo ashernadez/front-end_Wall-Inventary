@@ -58,13 +58,18 @@ useNavigation<StackNavigationProp<RootStackParamList>>();
                 </View> 
  
                 <View style={styles.formRegister}> 
-                    <Text>¿No tienes cuenta?</Text> 
-                    <TouchableOpacity onPress={() => 
-navigation.navigate('RegisterScreen')}> 
-                        <Text 
-style={styles.formRegisterText}>Regístrate</Text> 
-                    </TouchableOpacity> 
-                </View> 
+  <View style={styles.formRegister}> 
+    <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}> 
+      <Text style={styles.formRegisterText}>Regístrar producto</Text> 
+    </TouchableOpacity> 
+  </View>
+  <View style={styles.formRegister}>
+    <TouchableOpacity onPress={() => navigation.navigate('SupplierScreen')}> 
+      <Text style={styles.formRegisterText}>Regístrar proveedor</Text> 
+    </TouchableOpacity>
+  </View>
+</View>
+
  
             </View> 
         </View> 

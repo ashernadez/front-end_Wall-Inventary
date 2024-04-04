@@ -13,13 +13,14 @@ const HomeStyles = StyleSheet.create({
     }, 
     form: { 
         width: '100%', 
-        height: '40%', 
-        backgroundColor: 'white', 
+        height: '50%', 
+        backgroundColor: '#E7EAEC', 
         position: 'absolute', 
         bottom: 0, 
         borderTopLeftRadius: 40, 
         borderTopRightRadius: 40, 
-        padding: 30, 
+        padding: 30,
+         
     }, 
     formText: { 
         fontWeight: 'bold', 
@@ -33,11 +34,12 @@ const HomeStyles = StyleSheet.create({
  
     formRegisterText: { 
         fontStyle: 'italic', 
-        color: 'orange', 
+        color: '#215598', 
         borderBottomWidth: 1, 
-        borderBottomColor: 'orange', 
+        borderBottomColor: '#215598', 
         fontWeight: 'bold', 
         marginLeft: 10, 
+        marginBottom: 20, 
     }, 
     logoContainer: { 
         position: 'absolute', 

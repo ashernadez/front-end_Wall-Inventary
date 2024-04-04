@@ -3,10 +3,17 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack'; 
 import { HomeScreen } from './src/Presentation/views/home/home'; 
 import { RegisterScreen } from './src/Presentation/views/register/Register'; 
+import SupplierScreen from './src/Presentation/views/supplier/Supplier';
+import ListProdScreen from './src/Presentation/views/listprod/ListProd';
+import ListProvScreen from './src/Presentation/views/listprov/ListProv';
+
  
 export type RootStackParamList = { 
     HomeScreen: undefined; 
     RegisterScreen: undefined; 
+    SupplierScreen: undefined;
+    ListProdScreen: undefined;
+    ListProvScreen: undefined;
   }; 
    
    
@@ -28,10 +35,33 @@ export type RootStackParamList = {
             component={RegisterScreen} 
             options={{ 
               headerShown: true, 
-              title: 'Registro', 
+              title: 'Productos', 
             }} 
           /> 
-   
+          <Stack.Screen
+          name="SupplierScreen"
+          component={SupplierScreen}
+          options={{
+            headerShown: true,
+            title: 'Proveedores'
+          }}
+          />
+          <Stack.Screen
+          name="ListProdScreen"
+          component={ListProdScreen}
+          options={{
+            headerShown: true,
+            title: 'Listado Productos'
+          }}
+          />
+          <Stack.Screen
+          name="ListProvScreen"
+          component={ListProvScreen}
+          options={{
+            headerShown: true,
+            title: 'Listado Proveedores'
+          }}
+          />
         </Stack.Navigator> 
       </NavigationContainer> 
     ); 
