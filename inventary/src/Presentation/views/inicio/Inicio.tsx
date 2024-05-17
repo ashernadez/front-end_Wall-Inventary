@@ -7,9 +7,9 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App'; 
 import useViewModel  from './viewModel'; 
 import { CustomTextInput } from '../../component/CustomTextInput'; 
-import styles from './Styles'
+import styles from './Iniciostyles'
  
-export const HomeScreen = () => { 
+export const InicioScreen = () => { 
     const {email, password, onChange} = useViewModel(); 
     const navigation = 
 useNavigation<StackNavigationProp<RootStackParamList>>(); 
@@ -56,12 +56,28 @@ useNavigation<StackNavigationProp<RootStackParamList>>();
                         console.log('Password: ' + password); 
                     }} /> 
                 </View> 
-ñ
+ 
+                <View style={styles.formRegister}> 
+  <View style={styles.formRegister}> 
+    <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}> 
+      <Text style={styles.formRegisterText}>Regístrar producto</Text> 
+    </TouchableOpacity> 
+  </View>
+  <View style={styles.formRegister}>
+    <TouchableOpacity onPress={() => navigation.navigate('SupplierScreen')}> 
+      <Text style={styles.formRegisterText}>Regístrar proveedor</Text> 
+    </TouchableOpacity>
+  </View>
+  </View>
   <View style={styles.formRegister}>
     <TouchableOpacity onPress={() => navigation.navigate('InicioScreen')}> 
       <Text style={styles.formRegisterText}>inicioooo</Text> 
     </TouchableOpacity>
   </View>
+
+
+
+ 
             </View> 
         </View> 
     ); 
