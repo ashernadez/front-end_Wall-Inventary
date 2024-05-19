@@ -26,7 +26,7 @@ const CompraScreen = () => {
                 <CustomTextInput
                     image={require('../../../../assets/cantidad.png')}
                     placeholder='Cantidad de Compra'
-                    keyboardType='default'
+                    keyboardType='numeric'
                     property='cantidad'
                     onChangeText={onChange}
                     value={cantidad}
@@ -35,7 +35,7 @@ const CompraScreen = () => {
                 <CustomTextInput
                     image={require('../../../../assets/signo pesos.png')}
                     placeholder='Valor Compra'
-                    keyboardType='default'
+                    keyboardType='numeric'
                     property='Valor'
                     onChangeText={onChange}
                     value={Valor}

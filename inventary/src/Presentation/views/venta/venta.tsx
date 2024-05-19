@@ -26,7 +26,7 @@ const VentaScreen = () => {
                 <CustomTextInput
                     image={require('../../../../assets/cantidadV.png')}
                     placeholder='Cantidad Venta'
-                    keyboardType='default'
+                    keyboardType='numeric'
                     property='C_Venta'
                     onChangeText={onChange}
                     value={C_Venta}
@@ -34,7 +34,7 @@ const VentaScreen = () => {
                 <CustomTextInput
                     image={require('../../../../assets/valorV.png')}
                     placeholder='Valor Compra'
-                    keyboardType='default'
+                    keyboardType='numeric'
                     property='V_Venta'
                     onChangeText={onChange}
                     value={V_Venta}
