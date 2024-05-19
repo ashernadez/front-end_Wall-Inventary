@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const SupplierStyles = StyleSheet.create({ 
+const CompraStyles = StyleSheet.create({ 
     container: { 
       flex: 1, 
       backgroundColor: '#000', 
@@ -15,7 +15,7 @@ const SupplierStyles = StyleSheet.create({
    
     form: { 
       width: '100%', 
-      height: '60%', 
+      height: '70%', 
       backgroundColor: '#E7EAEC', 
       position: 'absolute', 
       bottom: 0, 
@@ -26,7 +26,7 @@ const SupplierStyles = StyleSheet.create({
    
     formText: { 
       fontWeight: 'bold', 
-      fontSize: 20, 
+      fontSize: 25, 
     }, 
    
     formIcon: { 
@@ -108,4 +108,4 @@ confirmButtonText: {
 },
   });
 
-  export default SupplierStyles;
+  export default CompraStyles;

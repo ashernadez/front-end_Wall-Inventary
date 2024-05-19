@@ -1,5 +1,5 @@
 import React, {useState} from 'react' 
-const InicioViewModel = () => { 
+const ViewModel = () => { 
 const [values, setValues] = useState({ 
 email:'', 
 password:'', 
@@ -15,5 +15,5 @@ password:'',
   } 
 } 
  
-export default InicioViewModel; 
+export default ViewModel; 
  

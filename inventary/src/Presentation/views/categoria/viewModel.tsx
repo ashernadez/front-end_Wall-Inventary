@@ -1,26 +1,23 @@
 import React, { useState } from 'react' 
  
-const RegisterViewModel = () => { 
+const CategoriaViewModel = () => { 
     const [values, setValues] = useState({ 
-        name: '', 
-        description: '', 
-        price: '', 
-        stock: '', 
+        N_Categoria: '',  
     }); 
  
     const onChange = (property: string, value: any) => { 
         setValues({ ...values, [property]: value }); 
     } 
  
-    const register = () => { 
+    const Categoria = () => { 
         console.log(JSON.stringify(values)); 
     } 
  
     return { 
         ...values, 
         onChange, 
-        register 
+       Categoria
     } 
 } 
  
-export default RegisterViewModel; 
+export default CategoriaViewModel; 

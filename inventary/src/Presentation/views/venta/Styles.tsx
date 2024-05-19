@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const RegisterStyles = StyleSheet.create({ 
+const VentaStyles = StyleSheet.create({ 
     container: { 
       flex: 1, 
       backgroundColor: 'black', 
@@ -71,13 +71,34 @@ const RegisterStyles = StyleSheet.create({
   width: 100, 
   height: 100, 
   }, 
-  logoText: { 
-  color: 'white', 
-  textAlign: 'center', 
-  fontSize: 20, 
-  marginTop: 10, 
-  fontWeight: 'bold', 
-  }, 
+  buttonContainer: {
+    marginTop: 30,
+    alignItems: 'center',
+  },
+specialButton:{
+    backgroundColor: '#1296DC', // Cambiar el color del botón aquí
+    padding: 15,
+    borderColor: 'black',
+    borderWidth: 2,
+    borderRadius: 40,
+    alignItems: 'center',
+    width: '30%',
+
+},
+confirmButton: {
+  backgroundColor: '#1296DC', // Cambiar el color del botón aquí
+  padding: 15,
+  borderColor: 'black',
+  borderWidth: 2,
+  borderRadius: 40,
+  alignItems: 'center',
+  width: '80%',
+  marginBottom: 20, // Ajusta este margen según sea necesario
+},
+confirmButtonText: {
+  color: '#020202', // Texto en color azul oscuro
+  fontSize: 18,
+},
   });
 
-  export default RegisterStyles;
+  export default VentaStyles;

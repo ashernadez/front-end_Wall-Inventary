@@ -1,26 +1,27 @@
 import React, { useState } from 'react' 
+import ProductoScreen from './producto';
  
-const SupplierViewModel = () => { 
+const ProductoViewModel = () => { 
     const [values, setValues] = useState({ 
         name: '', 
-        direccion: '', 
-        correo: '', 
-        telefono: '', 
+        description: '', 
+        price: '', 
+        stock: '', 
     }); 
  
     const onChange = (property: string, value: any) => { 
         setValues({ ...values, [property]: value }); 
     } 
  
-    const supplier = () => { 
+    const producto = () => { 
         console.log(JSON.stringify(values)); 
     } 
  
     return { 
         ...values, 
         onChange, 
-        supplier
+        producto 
     } 
 } 
  
-export default SupplierViewModel; 
+export default ProductoViewModel; 

@@ -1,62 +1,69 @@
-import { StyleSheet } from "react-native"; 
- 
+import { StyleSheet } from 'react-native'; 
+
 const InicioStyles = StyleSheet.create({ 
     container: { 
-        flex: 1, 
-        backgroundColor: 'black', 
+        flex: 1,  
     }, 
     imageBackground: { 
         width: '100%', 
         height: '100%', 
-        opacity: 0.7, 
-        bottom: '30%', 
-    }, 
-    form: { 
-        width: '100%', 
-        height: '50%', 
-        backgroundColor: '#E7EAEC', 
         position: 'absolute', 
-        bottom: 0, 
-        borderTopLeftRadius: 40, 
-        borderTopRightRadius: 40, 
-        padding: 30,
-         
-    }, 
-    formText: { 
-        fontWeight: 'bold', 
-        fontSize: 16, 
-    }, 
-    formRegister: { 
-        flexDirection: 'row', 
-        justifyContent: 'center', 
-        marginTop: 30, 
-    }, 
- 
-    formRegisterText: { 
-        fontStyle: 'italic', 
-        color: '#215598', 
-        borderBottomWidth: 1, 
-        borderBottomColor: '#215598', 
-        fontWeight: 'bold', 
-        marginLeft: 10, 
-        marginBottom: 20, 
+        top: 0,
+        left: 0,
     }, 
     logoContainer: { 
-        position: 'absolute', 
         alignSelf: 'center', 
-        top: '15%', 
+        marginTop: '1%',  // Ajusta este valor para mover el logo más arriba
+        alignItems: 'center',
     }, 
     logoImage: { 
         width: 150, 
         height: 150, 
     }, 
     logoText: { 
-        color: 'white', 
+        color: '#000', 
         textAlign: 'center', 
-        fontSize: 20, 
+        fontSize: 25, 
         marginTop: 10, 
         fontWeight: 'bold', 
     }, 
+    buttonContainer: { 
+        marginTop: 10, 
+        alignItems: 'center',
+    },
+    buttonGroup: { // Estilos para el grupo de botones
+        flexDirection: 'row', // Alinear los botones en una fila
+        borderRadius: 50,
+        borderColor: '#000',
+        borderWidth: 1, // Añadir un borde negro
+        justifyContent: 'space-around', // Espacio uniforme entre los botones
+        marginBottom: 0, // Espacio inferior entre grupos de botones
+    },
+    lightButton: {
+        backgroundColor: '#E0F7FA', // Cambiar el color del botón aquí
+        padding: 15,
+        fontSize: 13,
+        borderColor:'#000',
+        borderWidth: 2,
+        borderRadius: 40,
+        alignItems: 'center',
+        width: '80%',
+    },
+    specialButton:{
+        backgroundColor: '#1296DC', // Cambiar el color del botón aquí
+        padding: 15,
+        borderColor: '#000',
+        borderWidth: 2,
+        borderRadius: 40,
+        alignItems: 'center',
+        width: '30%',
+    },
+    lightButtonText: {
+        color: '#020202', // Texto en color azul oscuro
+        fontSize: 18,
+
+    },
 }); 
- 
+
 export default InicioStyles;
+

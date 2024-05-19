@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
 
-const SupplierStyles = StyleSheet.create({ 
+const InformeStyles = StyleSheet.create({ 
     container: { 
       flex: 1, 
-      backgroundColor: '#000', 
+      backgroundColor: 'white', 
     }, 
      
     imageBackground: { 
@@ -15,7 +15,7 @@ const SupplierStyles = StyleSheet.create({
    
     form: { 
       width: '100%', 
-      height: '60%', 
+      height: '50%', 
       backgroundColor: '#E7EAEC', 
       position: 'absolute', 
       bottom: 0, 
@@ -27,25 +27,7 @@ const SupplierStyles = StyleSheet.create({
     formText: { 
       fontWeight: 'bold', 
       fontSize: 20, 
-    }, 
-   
-    formIcon: { 
-      width: 25, 
-      height: 25, 
-      marginTop: 5, 
-    }, 
-   
-    formInput: { 
-      flexDirection: 'row', 
-      marginTop: 25, 
-    }, 
-   
-    formTextInput: { 
-      flex: 1, 
-      borderBottomWidth: 1, 
-      borderBottomColor: '#AAAAAA', 
-      marginLeft: 15, 
-    }, 
+    },  
    
     formRegister: { 
       flexDirection: 'row', 
@@ -53,7 +35,7 @@ const SupplierStyles = StyleSheet.create({
       marginTop: 30, 
     }, 
    
-    formRegisterText: { 
+    forminfoText: { 
       fontStyle: 'italic', 
       color: '#215598', 
       borderBottomWidth: 1, 
@@ -70,13 +52,6 @@ const SupplierStyles = StyleSheet.create({
     logoImage: { 
   width: 100, 
   height: 100, 
-  }, 
-  logoText: { 
-  color: 'white', 
-  textAlign: 'center', 
-  fontSize: 20, 
-  marginTop: 10, 
-  fontWeight: 'bold', 
   }, 
   buttonContainer: {
     marginTop: 30,
@@ -108,4 +83,4 @@ confirmButtonText: {
 },
   });
 
-  export default SupplierStyles;
+  export default InformeStyles;

@@ -8,16 +8,17 @@ import styles from './Styles'
 import { useNavigation } from '@react-navigation/native'; 
 import { StackNavigationProp } from '@react-navigation/stack'; 
 import { RootStackParamList } from '../../../../App';
+import ProductoStyles from './Styles';
 
-export const RegisterScreen = () => { 
+export const ProductoScreen = () => { 
   const { name, description, stock, price, onChange, 
-register } = useViewModel(); 
+producto } = useViewModel(); 
 const navigation = 
 useNavigation<StackNavigationProp<RootStackParamList>>(); 
   return ( 
     <View style={styles.container}> 
       <Image 
-        source={require('../../../../assets/fondop.jpeg')} 
+        source={require('../../../../assets/fondor.jpeg')} 
         style={styles.imageBackground} 
       /> 
  
@@ -60,17 +61,15 @@ useNavigation<StackNavigationProp<RootStackParamList>>();
           value={stock} 
         /> 
        
-        <View style={{ marginTop: 30 }}> 
-          <RoundedButton text='CONFIRMAR' onPress={() => register()} /> 
-        </View> 
-        <View style={styles.formRegister}>
-    <TouchableOpacity onPress={() => navigation.navigate('ListProdScreen')}> 
-      <Text style={styles.formRegisterText}>Mostrar Productos</Text> 
-    </TouchableOpacity>
-  </View>
+       <View style={ProductoStyles.buttonContainer}>
+                         {/* Botón de confirmación */}
+                         <TouchableOpacity style={ProductoStyles.confirmButton} onPress={producto}>
+                             <Text style={ProductoStyles.confirmButtonText}>CONFIRMAR</Text>
+                         </TouchableOpacity>
+                     </View>
       </View> 
     </View> 
   ); 
 }  
  
-export default RegisterScreen
+export default ProductoScreen

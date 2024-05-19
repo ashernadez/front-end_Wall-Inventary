@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native"; 
- 
-const HomeStyles = StyleSheet.create({ 
+
+const Homestyles = StyleSheet.create({ 
     container: { 
         flex: 1, 
-        backgroundColor: 'black', 
+        backgroundColor: 'white', 
     }, 
     imageBackground: { 
         width: '100%', 
@@ -20,43 +20,54 @@ const HomeStyles = StyleSheet.create({
         borderTopLeftRadius: 40, 
         borderTopRightRadius: 40, 
         padding: 30,
-         
-    }, 
+    },
+    formContainer: { 
+        backgroundColor: 'white', // Fondo blanco para el recuadro
+        borderRadius: 30, 
+        borderColor: '#000',
+        borderWidth: 2,
+        padding: 10,
+        marginTop: 30,
+    },
     formText: { 
         fontWeight: 'bold', 
-        fontSize: 16, 
+        fontSize: 28, 
+        
     }, 
-    formRegister: { 
-        flexDirection: 'row', 
-        justifyContent: 'center', 
-        marginTop: 30, 
-    }, 
- 
-    formRegisterText: { 
-        fontStyle: 'italic', 
-        color: '#215598', 
-        borderBottomWidth: 1, 
-        borderBottomColor: '#215598', 
-        fontWeight: 'bold', 
-        marginLeft: 10, 
-        marginBottom: 20, 
-    }, 
+
     logoContainer: { 
         position: 'absolute', 
         alignSelf: 'center', 
-        top: '15%', 
+        top: '13%', 
     }, 
     logoImage: { 
         width: 150, 
         height: 150, 
     }, 
     logoText: { 
-        color: 'white', 
+        color: '#000', // Cambiar el color del texto a negro
         textAlign: 'center', 
         fontSize: 20, 
         marginTop: 10, 
         fontWeight: 'bold', 
-    }, 
+    },
+    buttonContainer: {
+        marginTop: 30,
+        alignItems: 'center',
+    },
+    button: {
+        backgroundColor: '#1296DC', // Color del botón claro
+        padding: 15,
+        borderRadius: 50,
+        borderColor: '#000',
+        borderWidth: 1,
+        alignItems: 'center',
+        width: '50%',
+    },
+    buttonText: {
+        color: '#020202', // Texto en color azul oscuro
+        fontSize: 17,
+    },
 }); 
- 
-export default HomeStyles;
+
+export default Homestyles;

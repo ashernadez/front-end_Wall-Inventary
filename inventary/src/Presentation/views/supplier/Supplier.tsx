@@ -8,17 +8,18 @@ import { CustomTextInput } from '../../component/CustomTextInput';
 import { useNavigation } from '@react-navigation/native'; 
 import { StackNavigationProp } from '@react-navigation/stack'; 
 import { RootStackParamList } from '../../../../App';
+import SupplierStyles from './Styles';
 
 
 const SupplierScreen = () => {
     const { name, direccion, correo, telefono, onChange, 
-        register } = useViewModel(); 
+        supplier} = useViewModel(); 
       const navigation = 
     useNavigation<StackNavigationProp<RootStackParamList>>(); 
           return ( 
             <View style={styles.container}> 
               <Image 
-                source={require('../../../../assets/fondop.jpeg')} 
+                source={require('../../../../assets/fondor.jpeg')} 
                 style={styles.imageBackground} 
               /> 
          
@@ -61,16 +62,15 @@ const SupplierScreen = () => {
                   value={telefono} 
                 /> 
                
-                <View style={{ marginTop: 30 }}> 
-                  <RoundedButton text='CONFIRMAR' onPress={() => register()} /> 
-                </View> 
-                <View style={styles.formRegister}>
-    <TouchableOpacity onPress={() => navigation.navigate('ListProvScreen')}> 
-      <Text style={styles.formRegisterText}>Mostrar Proveedores</Text> 
-    </TouchableOpacity>
+               <View style={SupplierStyles.buttonContainer}>
+                         {/* Botón de confirmación */}
+                         <TouchableOpacity style={SupplierStyles.confirmButton} onPress={supplier}>
+                             <Text style={SupplierStyles.confirmButtonText}>CONFIRMAR</Text>
+                         </TouchableOpacity>
+                     </View> 
+            
   </View>
               </View> 
-            </View> 
           ); 
 }
 

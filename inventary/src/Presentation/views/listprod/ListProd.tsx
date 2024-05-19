@@ -6,6 +6,7 @@ const ListProdScreen = () => {
     <ScrollView horizontal={true}>
         <View>
             <View style={styles.row}>
+            <Text style={[styles.text, styles.header]}>Id |</Text>
                 <Text style={[styles.text, styles.header]}> Nombre del Producto  |</Text>
                 <Text style={[styles.text, styles.header]}>  Descripción  |</Text>
                 <Text style={[styles.text, styles.header]}>  Precio  |</Text>

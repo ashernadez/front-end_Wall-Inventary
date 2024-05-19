@@ -1,84 +1,72 @@
-import React, { useState} from 'react'; 
-import { useNavigation } from '@react-navigation/native'; 
-import { View, Text, StyleSheet, Image, TextInput, ToastAndroid, Touchable, 
-TouchableOpacity } from 'react-native'; 
-import { RoundedButton } from '../../component/RoundedButton'; 
-import { StackNavigationProp } from '@react-navigation/stack'; 
-import { RootStackParamList } from '../../../../App'; 
-import useViewModel  from './viewModel'; 
-import { CustomTextInput } from '../../component/CustomTextInput'; 
-import styles from './Iniciostyles'
- 
-export const InicioScreen = () => { 
-    const {email, password, onChange} = useViewModel(); 
-    const navigation = 
-useNavigation<StackNavigationProp<RootStackParamList>>(); 
- 
-    return ( 
-        <View style={styles.container}> 
-            <Image 
-                source={require('../../../../assets/fondop.jpeg')} 
-                style={styles.imageBackground} 
-            /> 
-            <View style={styles.logoContainer}> 
-                <Image 
-                    source={require('../../../../assets/logocon.png')} 
-                    style={styles.logoImage} 
-                /> 
-                <Text style={styles.logoText}>Wall-Inventary</Text> 
-            </View> 
- 
-            <View style={styles.form}> 
-                <Text style={styles.formText}>Ingresar</Text> 
- 
-                <CustomTextInput  
-                    image= {require('../../../../assets/usua.png')} 
-                    placeholder='Numero documento' 
-                    keyboardType='numeric' 
-                    property='email' 
-                    onChangeText={onChange} 
-                    value={email} 
-                /> 
-                <CustomTextInput  
-                    image= {require('../../../../assets/contra.png')} 
-                    placeholder='Contraseña' 
-                    keyboardType='default' 
-                    property='password' 
-                    onChangeText={onChange} 
-                    value={password} 
-              secureTextEntry={true} 
- 
-                /> 
- 
-                <View style={{ marginTop: 30 }}> 
-                    <RoundedButton text='ENTRAR' onPress={() =>{ 
-                        console.log('Document: ' + email); 
-                        console.log('Password: ' + password); 
-                    }} /> 
-                </View> 
- 
-                <View style={styles.formRegister}> 
-  <View style={styles.formRegister}> 
-    <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}> 
-      <Text style={styles.formRegisterText}>Regístrar producto</Text> 
-    </TouchableOpacity> 
-  </View>
-  <View style={styles.formRegister}>
-    <TouchableOpacity onPress={() => navigation.navigate('SupplierScreen')}> 
-      <Text style={styles.formRegisterText}>Regístrar proveedor</Text> 
-    </TouchableOpacity>
-  </View>
-  </View>
-  <View style={styles.formRegister}>
-    <TouchableOpacity onPress={() => navigation.navigate('InicioScreen')}> 
-      <Text style={styles.formRegisterText}>inicioooo</Text> 
-    </TouchableOpacity>
-  </View>
+import React, { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../../App';
 
+import InicioStyles from './Iniciostyles'; // Importar los estilos de Inicio
 
+export const InicioScreen = () => {
+    const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+    const [menuVisible, setMenuVisible] = useState(false); // Estado para controlar la visibilidad del menú
 
- 
-            </View> 
-        </View> 
-    ); 
-} 
+    const toggleMenu = () => {
+        setMenuVisible(!menuVisible);
+    };
+
+    return (
+        <View style={InicioStyles.container}>
+            <Image
+                source={require('../../../../assets/fondor.jpeg')}
+                style={InicioStyles.imageBackground}
+            />
+            <View style={InicioStyles.logoContainer}>
+                <Text style={InicioStyles.logoText}>Bienvenido a Wall-Inventary</Text>
+                <View style={InicioStyles.logoImage}>
+                    <Image
+                        source={require('../../../../assets/logosin.png')}
+                        style={InicioStyles.imageBackground}
+                    />
+                </View>
+            </View>
+            <View style={InicioStyles.buttonContainer}>
+                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('ProductoScreen')}>
+                    <Text style={InicioStyles.lightButtonText}>Registrar Productos</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={InicioStyles.buttonContainer}>
+                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('SupplierScreen')}>
+                    <Text style={InicioStyles.lightButtonText}>Registrar Proveedores</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={InicioStyles.buttonContainer}>
+                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('CategoriaScreen')}>
+                    <Text style={InicioStyles.lightButtonText}>Registrar Categorías</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={InicioStyles.buttonContainer}>
+                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('VentaScreen')}>
+                    <Text style={InicioStyles.lightButtonText}>Registrar Ventas</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={InicioStyles.buttonContainer}>
+                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('InformeScreen')}>
+                    <Text style={InicioStyles.lightButtonText}>Registrar Informes</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={InicioStyles.buttonContainer}>
+                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('CompraScreen')}>
+                    <Text style={InicioStyles.lightButtonText}>Registrar  Compras</Text>
+                </TouchableOpacity>
+            </View>
+
+            <View style={InicioStyles.buttonContainer}>
+                {/* Aquí aplicamos el estilo adicional para el botón "Listados" */}
+                <TouchableOpacity style={InicioStyles.specialButton} onPress={() => navigation.navigate('ListadoScreen')}>
+                    <Text style={InicioStyles.lightButtonText}>Listados</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
+    );
+}
+
