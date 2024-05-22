@@ -3,7 +3,7 @@ import { StyleSheet, TextInput } from "react-native";
 const CategoriaStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#FFFFFF',
   },
   imageBackground: {
     width: '100%',

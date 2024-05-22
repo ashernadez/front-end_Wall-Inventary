@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const VentaStyles = StyleSheet.create({ 
     container: { 
       flex: 1, 
-      backgroundColor: 'black', 
+      backgroundColor: '#FFFFFF', 
     }, 
      
     imageBackground: { 

@@ -51,7 +51,7 @@ export const InicioScreen = () => {
             </View>
             <View style={InicioStyles.buttonContainer}>
                 <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('InformeScreen')}>
-                    <Text style={InicioStyles.lightButtonText}>Registrar Informes</Text>
+                    <Text style={InicioStyles.lightButtonText}>Informes</Text>
                 </TouchableOpacity>
             </View>
             <View style={InicioStyles.buttonContainer}>

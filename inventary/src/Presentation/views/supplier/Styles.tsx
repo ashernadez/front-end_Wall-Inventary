@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const SupplierStyles = StyleSheet.create({ 
     container: { 
       flex: 1, 
-      backgroundColor: '#000', 
+      backgroundColor: '#FFFFFF', 
     }, 
      
     imageBackground: { 

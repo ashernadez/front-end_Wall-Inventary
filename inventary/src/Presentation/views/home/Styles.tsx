@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const Homestyles = StyleSheet.create({ 
     container: { 
         flex: 1, 
-        backgroundColor: 'white', 
+        backgroundColor: '#FFFFFF', 
     }, 
     imageBackground: { 
         width: '100%', 

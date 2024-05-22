@@ -5,7 +5,7 @@ import { StyleSheet } from "react-native";
 const ProductoStyles = StyleSheet.create({ 
     container: { 
       flex: 1, 
-      backgroundColor: 'white', 
+      backgroundColor: '#FFFFFF', 
     }, 
      
     imageBackground: { 

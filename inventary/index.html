@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD App</title>
+    <style>
+        .tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>CRUD App</h1>
+    <nav>
+        <button onclick="showTab('productos')">Productos</button>
+        <button onclick="showTab('categorias')">Categorías</button>
+        <button onclick="showTab('proveedores')">Proveedores</button>
+        <button onclick="showTab('compras')">Compras</button>
+        <button onclick="showTab('ventas')">Ventas</button>
+        <button onclick="showTab('informes')">Informes</button>
+    </nav>
+
+    <div id="productos" class="tab">
+        <h2>Productos</h2>
+        <ul id="product-list"></ul>
+        <h3>Añadir Producto</h3>
+        <form id="product-form">
+            <input type="text" id="NombreP" placeholder="Nombre" required>
+            <input type="text" id="Descripcion" placeholder="Descripción" required>
+            <input type="number" id="Precio" placeholder="Precio" required>
+            <input type="number" id="Stock" placeholder="Stock" required>
+            <input type="text" id="Categoria" placeholder="Categoría" required>
+            <button type="submit">Añadir Producto</button>
+        </form>
+    </div>
+
+    <div id="categorias" class="tab">
+        <h2>Categorías</h2>
+        <ul id="category-list"></ul>
+        <h3>Añadir Categoría</h3>
+        <form id="category-form">
+            <input type="text" id="nombre-categoria" placeholder="Nombre" required>
+            <button type="submit">Añadir Categoría</button>
+        </form>
+    </div>
+
+    <div id="proveedores" class="tab">
+        <h2>Proveedores</h2>
+        <ul id="provider-list"></ul>
+        <h3>Añadir Proveedor</h3>
+        <form id="provider-form">
+            <input type="text" id="nombre-proveedor" placeholder="Nombre" required>
+            <input type="text" id="contacto-proveedor" placeholder="Contacto" required>
+            <button type="submit">Añadir Proveedor</button>
+        </form>
+    </div>
+
+    <div id="compras" class="tab">
+        <h2>Compras</h2>
+        <ul id="purchase-list"></ul>
+        <h3>Añadir Compra</h3>
+        <form id="purchase-form">
+            <input type="text" id="producto-compra" placeholder="Producto" required>
+            <input type="number" id="cantidad-compra" placeholder="Cantidad" required>
+            <input type="number" id="precio-compra" placeholder="Precio" required>
+            <button type="submit">Añadir Compra</button>
+        </form>
+    </div>
+
+    <div id="ventas" class="tab">
+        <h2>Ventas</h2>
+        <ul id="sales-list"></ul>
+        <h3>Añadir Venta</h3>
+        <form id="sales-form">
+            <input type="text" id="producto-venta" placeholder="Producto" required>
+            <input type="number" id="cantidad-venta" placeholder="Cantidad" required>
+            <input type="number" id="precio-venta" placeholder="Precio" required>
+            <button type="submit">Añadir Venta</button>
+        </form>
+    </div>
+
+    <div id="informes" class="tab">
+        <h2>Informes</h2>
+        <ul id="report-list"></ul>
+        <h3>Añadir Informe</h3>
+        <form id="report-form">
+            <input type="text" id="tipo-informe" placeholder="Tipo de Informe" required>
+            <input type="date" id="fecha-informe" placeholder="Fecha" required>
+            <textarea id="contenido-informe" placeholder="Contenido" required></textarea>
+            <button type="submit">Añadir Informe</button>
+        </form>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const productList = document.getElementById('product-list');
+        const productForm = document.getElementById('product-form');
+        const categoryList = document.getElementById('category-list');
+        const categoryForm = document.getElementById('category-form');
+        const providerList = document.getElementById('provider-list');
+        const providerForm = document.getElementById('provider-form');
+        const purchaseList = document.getElementById('purchase-list');
+        const purchaseForm = document.getElementById('purchase-form');
+        const salesList = document.getElementById('sales-list');
+        const salesForm = document.getElementById('sales-form');
+        const reportList = document.getElementById('report-list');
+        const reportForm = document.getElementById('report-form');
+
+        function showTab(tabId) {
+            tabs.forEach(tab => {
+                if (tab.id === tabId) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+        }
+
+        async function fetchItems(tabla, listElement) {
+            const response = await fetch(`http://localhost/crud_app/backend/index.php?tabla=${tabla}`);
+            const items = await response.json();
+            listElement.innerHTML = '';
+            items.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = JSON.stringify(item);
+                listElement.appendChild(li);
+            });
+        }
+
+        async function addItem(tabla, formData) {
+            const response = await fetch(`http://localhost/crud_app/backend/index.php?tabla=${tabla}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+            const result = await response.json();
+            console.log(result);
+            fetchItems(tabla, document.getElementById(`${tabla}-list`));
+        }
+
+        productForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const NombreP = document.getElementById('NombreP').value;
+            const Descripcion = document.getElementById('Descripcion').value;
+            const Precio = document.getElementById('Precio').value;
+            const Stock = document.getElementById('Stock').value;
+            const Categoria = document.getElementById('Categoria').value;
+            addItem('productos', {
+                NombreP,
+                Descripcion,
+                Precio,
+                Stock,
+                Categoria,
+                created_at: new Date().toISOString(),
+                updated_at: new Date().toISOString()
+            });
+        });
+
+        categoryForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre-categoria').value;
+            addItem('categorias', { nombre });
+        });
+
+        providerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre-proveedor').value;
+            const contacto = document.getElementById('contacto-proveedor').value;
+            addItem('proveedores', { nombre, contacto });
+        });
+
+        purchaseForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const producto = document.getElementById('producto-compra').value;
+            const cantidad = document.getElementById('cantidad-compra').value;
+            const precio = document.getElementById('precio-compra').value;
+            addItem('compras', { producto, cantidad, precio });
+        });
+
+        salesForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const producto = document.getElementById('producto-venta').value;
+            const cantidad = document.getElementById('cantidad-venta').value;
+            const precio = document.getElementById('precio-venta').value;
+            addItem('ventas', { producto, cantidad, precio });
+        });
+
+        reportForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const tipo = document.getElementById('tipo-informe').value;
+            const fecha = document.getElementById('fecha-informe').value;
+            const contenido = document.getElementById('contenido-informe').value;
+            addItem('informes', { tipo, fecha, contenido });
+        });
+
+        fetchItems('productos', productList);
+        fetchItems('categorias', categoryList);
+        fetchItems('proveedores', providerList);
+        fetchItems('compras', purchaseList);
+        fetchItems('ventas', salesList);
+        fetchItems('informes', reportList);
+
+        showTab('productos'); // Mostrar la pestaña de productos por defecto
+    </script>
+</body>
+</html>
