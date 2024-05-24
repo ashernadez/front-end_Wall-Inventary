@@ -15,11 +15,11 @@ export const InicioScreen = () => {
     };
 
     return (
-        <View style={InicioStyles.container}>
+       <View style={InicioStyles.container}>
             <Image
                 source={require('../../../../assets/fondor.jpeg')}
                 style={InicioStyles.imageBackground}
-            />
+            /> 
             <View style={InicioStyles.logoContainer}>
                 <Text style={InicioStyles.logoText}>Bienvenido a Wall-Inventary</Text>
                 <View style={InicioStyles.logoImage}>

@@ -1,6 +1,12 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#BEDCF7', // Cambiar el color de fondo a azul
+    },
     row: {
         flexDirection: 'row',
         alignItems: 'center', // Alinear horizontalmente los elementos dentro de cada fila
@@ -19,8 +25,9 @@ const styles = StyleSheet.create({
         marginVertical: 10, // Añadir margen vertical para separar del borde
     },
     header: {
-        backgroundColor: 'white', // Color de fondo diferente para la fila de encabezado
+        backgroundColor: '#BEDCF7', // Color de fondo diferente para la fila de encabezado
     }
 });
 
 export default styles;
+

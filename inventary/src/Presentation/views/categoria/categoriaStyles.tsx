@@ -13,7 +13,7 @@ const CategoriaStyles = StyleSheet.create({
   },
   form: {
     width: '100%',
-    height: '40%',
+    height: '50%',
     backgroundColor: '#FFFFFF',
     position: 'absolute',
     bottom: 0,

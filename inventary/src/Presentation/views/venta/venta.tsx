@@ -24,7 +24,7 @@ const VentaScreen = () => {
                 <Text style={styles.formText}>Registrar Venta</Text>
 
                 <CustomTextInput
-                    image={require('../../../../assets/cantidadV.png')}
+                    image={require('../../../../assets/canti.png')}
                     placeholder='Cantidad Venta'
                     keyboardType='numeric'
                     property='C_Venta'
@@ -32,7 +32,7 @@ const VentaScreen = () => {
                     value={C_Venta}
                 />
                 <CustomTextInput
-                    image={require('../../../../assets/valorV.png')}
+                    image={require('../../../../assets/val.png')}
                     placeholder='Valor Compra'
                     keyboardType='numeric'
                     property='V_Venta'
@@ -41,7 +41,7 @@ const VentaScreen = () => {
                 />
 
                 <CustomTextInput
-                    image={require('../../../../assets/fechaV.png')}
+                    image={require('../../../../assets/fecha1.png')}
                     placeholder='Fecha'
                     keyboardType='default'
                     property='F_Venta'

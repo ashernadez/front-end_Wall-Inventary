@@ -21,7 +21,7 @@ const CategoriaScreen = () => {
             <View style={CategoriaStyles.form}>
                 <Text style={CategoriaStyles.formText}>Ingresar Categoria</Text>
                 <CustomTextInput 
-                  image={require('../../../../assets/cate.png')} 
+                  image={require('../../../../assets/categori.png')} 
                   placeholder='Nombre de la Categoria' 
                   keyboardType='default' 
                   property='N_Categoria' 

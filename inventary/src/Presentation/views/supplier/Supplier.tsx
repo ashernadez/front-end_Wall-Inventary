@@ -27,7 +27,7 @@ const SupplierScreen = () => {
                 <Text style={styles.formText}>Registrar Proveedores</Text> 
          
                 <CustomTextInput 
-                  image={require('../../../../assets/prov.png')} 
+                  image={require('../../../../assets/provee.png')} 
                   placeholder='Nombre proveedor' 
                   keyboardType='default' 
                   property='name' 
@@ -36,7 +36,7 @@ const SupplierScreen = () => {
                 /> 
          
                 <CustomTextInput 
-                  image={require('../../../../assets/direc.png')} 
+                  image={require('../../../../assets/direci.png')} 
                   placeholder='Direccion' 
                   keyboardType='default' 
                   property='direccion' 
@@ -45,7 +45,7 @@ const SupplierScreen = () => {
                 /> 
          
                 <CustomTextInput 
-                  image={require('../../../../assets/correo.png')} 
+                  image={require('../../../../assets/corre.png')} 
                   placeholder='Correo' 
                   keyboardType='default' 
                   property='correo' 
@@ -54,7 +54,7 @@ const SupplierScreen = () => {
                 /> 
          
                 <CustomTextInput 
-                  image={require('../../../../assets/tel.png')} 
+                  image={require('../../../../assets/telef.png')} 
                   placeholder='Numero telefono' 
                   keyboardType='numeric' 
                   property='telefono' 

@@ -6,7 +6,7 @@ import styles from './Styles';
 import ProductoStyles from './Styles';
 
 export const ProductoScreen = () => {
-  const { NombreP, Descripcion, stock, precio, Categoria, created_at, updated_at, onChange, producto } = useViewModel();
+  const { NombreP, Descripcion, stock, precio, Categoria, onChange, producto } = useViewModel();
 
   return (
     <View style={styles.container}>
@@ -19,7 +19,7 @@ export const ProductoScreen = () => {
         <Text style={styles.formText}>Registrar Productos</Text>
 
         <CustomTextInput
-          image={require('../../../../assets/prod.png')}
+          image={require('../../../../assets/product.png')}
           placeholder='Nombre producto'
           keyboardType='default'
           property='NombreP'
@@ -28,7 +28,7 @@ export const ProductoScreen = () => {
         />
 
         <CustomTextInput
-          image={require('../../../../assets/desc.png')}
+          image={require('../../../../assets/descrip.png')}
           placeholder='Descripcion'
           keyboardType='default'
           property='Descripcion'
@@ -37,7 +37,7 @@ export const ProductoScreen = () => {
         />
 
         <CustomTextInput
-          image={require('../../../../assets/pre.png')}
+          image={require('../../../../assets/preci.png')}
           placeholder='Precio'
           keyboardType='numeric'
           property='precio'
@@ -46,7 +46,7 @@ export const ProductoScreen = () => {
         />
 
         <CustomTextInput
-          image={require('../../../../assets/stock.png')}
+          image={require('../../../../assets/Stoc.png')}
           placeholder='Stock'
           keyboardType='numeric'
           property='stock'
@@ -55,7 +55,7 @@ export const ProductoScreen = () => {
         />
 
         <CustomTextInput
-          image={require('../../../../assets/stock.png')}
+          image={require('../../../../assets/catego.png')}
           placeholder='Categoria'
           keyboardType='default'
           property='Categoria'
@@ -63,23 +63,6 @@ export const ProductoScreen = () => {
           value={Categoria}
         />
 
-        <CustomTextInput
-          image={require('../../../../assets/stock.png')}
-          placeholder='created_at'
-          keyboardType='default'
-          property='created_at'
-          onChangeText={onChange}
-          value={created_at}
-        />
-
-        <CustomTextInput
-          image={require('../../../../assets/stock.png')}
-          placeholder='updated_at'
-          keyboardType='default'
-          property='updated_at'
-          onChangeText={onChange}
-          value={updated_at}
-        />
 
         <View style={ProductoStyles.buttonContainer}>
           {/* Botón de confirmación */}

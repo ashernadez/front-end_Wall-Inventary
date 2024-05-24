@@ -1,55 +1,54 @@
-import { StyleSheet } from "react-native"; 
+import { StyleSheet } from "react-native";
 
-const Homestyles = StyleSheet.create({ 
-    container: { 
-        flex: 1, 
-        backgroundColor: '#FFFFFF', 
-    }, 
-    imageBackground: { 
-        width: '100%', 
-        height: '100%', 
-        opacity: 0.7, 
-        bottom: '30%', 
-    }, 
-    form: { 
-        width: '100%', 
-        height: '50%', 
-        backgroundColor: '#E7EAEC', 
-        position: 'absolute', 
-        bottom: 0, 
-        borderTopLeftRadius: 40, 
-        borderTopRightRadius: 40, 
+const Homestyles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#FFFFFF',
+    },
+    imageBackground: {
+        width: '150%',
+        height: '150%',
+        opacity: 0.7,
+        bottom: '30%',
+    },
+    form: {
+        width: '100%',
+        height: '50%',
+        backgroundColor: '#E7EAEC',
+        position: 'absolute',
+        bottom: 0,
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40,
         padding: 30,
     },
-    formContainer: { 
+    formContainer: {
         backgroundColor: 'white', // Fondo blanco para el recuadro
-        borderRadius: 30, 
+        borderRadius: 30,
         borderColor: '#000',
         borderWidth: 2,
         padding: 10,
         marginTop: 30,
     },
-    formText: { 
-        fontWeight: 'bold', 
-        fontSize: 28, 
-        
-    }, 
+    formText: {
+        fontWeight: 'bold',
+        fontSize: 28,
+    },
 
-    logoContainer: { 
-        position: 'absolute', 
-        alignSelf: 'center', 
-        top: '13%', 
-    }, 
-    logoImage: { 
-        width: 150, 
-        height: 150, 
-    }, 
-    logoText: { 
+    logoContainer: {
+        position: 'absolute',
+        alignSelf: 'center',
+        top: '8%', // Ajustar la posición vertical del logo
+    },
+    logoImage: {
+        width: 210, // Aumentar el tamaño del logo
+        height: 210, // Aumentar el tamaño del logo
+    },
+    logoText: {
         color: '#000', // Cambiar el color del texto a negro
-        textAlign: 'center', 
-        fontSize: 20, 
-        marginTop: 10, 
-        fontWeight: 'bold', 
+        textAlign: 'center',
+        fontSize: 20,
+        marginTop: 10,
+        fontWeight: 'bold',
     },
     buttonContainer: {
         marginTop: 30,
@@ -68,6 +67,6 @@ const Homestyles = StyleSheet.create({
         color: '#020202', // Texto en color azul oscuro
         fontSize: 17,
     },
-}); 
+});
 
 export default Homestyles;

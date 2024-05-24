@@ -17,7 +17,7 @@ const ProductoStyles = StyleSheet.create({
    
     form: { 
       width: '100%', 
-      height: '70%', 
+      height: '80%', 
       backgroundColor: '#E7EAEC', 
       position: 'absolute', 
       bottom: 0, 

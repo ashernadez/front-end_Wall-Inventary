@@ -15,7 +15,7 @@ const InformeStyles = StyleSheet.create({
    
     form: { 
       width: '100%', 
-      height: '50%', 
+      height: '60%', 
       backgroundColor: '#E7EAEC', 
       position: 'absolute', 
       bottom: 0, 
