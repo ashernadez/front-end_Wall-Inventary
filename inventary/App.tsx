@@ -17,6 +17,8 @@ import ListVentaScreen from './src/Presentation/views/listventa/listventa';
 import ListComScreen from './src/Presentation/views/listcomp/listcom';
 import ListInfoScreen from './src/Presentation/views/listinforme/listinfo';
 import { ListadoScreen } from './src/Presentation/views/listados/listado';
+import Productos from './src/app/views/Productos/Productos';
+
 
 export type RootStackParamList = {
   HomeScreen: undefined;
@@ -34,7 +36,7 @@ export type RootStackParamList = {
   ListInfoScreen: undefined;
   ListProdScreen: undefined;
   ListProvScreen: undefined;
-  
+  Productos: undefined;
 };
 
 const Stack = createNativeStackNavigator <RootStackParamList> 
@@ -116,6 +118,11 @@ const App = () => {
           name="ListInfoScreen"
           component={ListInfoScreen}
           options={{ headerShown: true, title: 'Listado Informes' }}
+        />
+        <Stack.Screen
+          name="Productos"
+          component={Productos}
+          options={{ headerShown: true, title: 'Productos' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

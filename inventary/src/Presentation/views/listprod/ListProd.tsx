@@ -13,6 +13,8 @@ const ListProdScreen = () => {
             <Text style={[styles.text, styles.header]}> Descripción |</Text>
             <Text style={[styles.text, styles.header]}> Precio |</Text>
             <Text style={[styles.text, styles.header]}> Stock</Text>
+            <Text style={[styles.text, styles.header]}> categoria_id</Text>
+            <Text style={[styles.text, styles.header]}> proveedor_id</Text>
           </View>
           {/* Puedes agregar más filas de datos aquí */}
         </View>

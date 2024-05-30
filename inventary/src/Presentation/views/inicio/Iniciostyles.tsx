@@ -18,13 +18,13 @@ const InicioStyles = StyleSheet.create({
     }, 
     logoImage: { 
         width: 150, 
-        height: 150, 
+        height: 145, 
     }, 
     logoText: { 
         color: '#000', 
         textAlign: 'center', 
         fontSize: 25, 
-        marginTop: 10, 
+        marginTop: -2, 
         fontWeight: 'bold', 
     }, 
     buttonContainer: { 

@@ -65,6 +65,16 @@ export const InicioScreen = () => {
                 <TouchableOpacity style={InicioStyles.specialButton} onPress={() => navigation.navigate('ListadoScreen')}>
                     <Text style={InicioStyles.lightButtonText}>Listados</Text>
                 </TouchableOpacity>
+
+                <View style={InicioStyles.buttonContainer}>
+                {/* Aquí aplicamos el estilo adicional para el botón "Listados" */}
+                <TouchableOpacity style={InicioStyles.specialButton} onPress={() => navigation.navigate('Productos')}>
+                    <Text style={InicioStyles.lightButtonText}>Productos</Text>
+
+
+                    
+                </TouchableOpacity>
+            </View>
             </View>
         </View>
     );

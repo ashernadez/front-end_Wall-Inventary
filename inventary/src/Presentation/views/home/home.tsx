@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 
@@ -9,7 +9,7 @@ import { CustomTextInput } from '../../component/CustomTextInput';
 import styles from './Styles';
 
 export const HomeScreen = () => {
-    const { email, password, onChange } = ViewModel();
+    const { documento, password, onChange } = ViewModel();
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
     return (
@@ -33,9 +33,9 @@ export const HomeScreen = () => {
                         image={require('../../../../assets/usua.png')}
                         placeholder='Numero documento'
                         keyboardType='numeric'
-                        property='email'
+                        property='documento'
                         onChangeText={onChange}
-                        value={email}
+                        value={documento}
                     />
                     <CustomTextInput
                         image={require('../../../../assets/contra.png')}
@@ -52,7 +52,7 @@ export const HomeScreen = () => {
                     <TouchableOpacity 
                         style={styles.button}
                         onPress={() => {
-                            console.log('Document: ' + email);
+                            console.log('Document: ' + documento);
                             console.log('Password: ' + password);
                             navigation.navigate('InicioScreen'); // Navega a InicioScreen
                         }}
