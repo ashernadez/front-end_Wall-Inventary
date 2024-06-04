@@ -1,41 +1,39 @@
 import { useState, useEffect } from 'react';
 
-interface Producto {
+interface Proveedor {
   id: string;
-  NombreP: string;
-  Descripcion: string;
-  Precio: number;
-  stock: number;
-  categoria_id: number;
-  proveedor_id: number;
+  nombre: string;
+  telefono: string;
+  direccion: string;
+  correo: string;
 }
 
 const baseUrl: string = 'http://192.168.10.14/ApiRestProjet/ApiRestSgi/public/api/';
 
-const useProductos = () => {
-  const [productos, setProductos] = useState<Producto[]>([]);
+const useProveedores = () => {
+  const [proveedores, setProveedores] = useState<Proveedor[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchProductos = async () => {
+    const fetchProveedores = async () => {
       try {
-        const response = await fetch(baseUrl + 'Productos', {
+        const response = await fetch(baseUrl + 'Proveedores', {
           method: 'GET',
         });
         const data = await response.json();
-        setProductos(data);
-      } catch (err:any) {
+        setProveedores(data);
+      } catch (err: any) {
         setError(err.message);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchProductos();
+    fetchProveedores();
   }, []);
 
-  return { productos, loading, error };
+  return { proveedores, loading, error };
 };
 
-export default useProductos;
+export default useProveedores;

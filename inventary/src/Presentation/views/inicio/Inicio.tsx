@@ -5,6 +5,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
 
 import InicioStyles from './Iniciostyles'; // Importar los estilos de Inicio
+import { Home2 } from '../../../app/views/home/home';
 
 export const InicioScreen = () => {
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
@@ -30,53 +31,36 @@ export const InicioScreen = () => {
                 </View>
             </View>
             <View style={InicioStyles.buttonContainer}>
-                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('ProductoScreen')}>
-                    <Text style={InicioStyles.lightButtonText}>Registrar Productos</Text>
+                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('Productos')}>
+                    <Text style={InicioStyles.lightButtonText}>VER PRODUCTOS</Text>
                 </TouchableOpacity>
             </View>
             <View style={InicioStyles.buttonContainer}>
-                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('SupplierScreen')}>
-                    <Text style={InicioStyles.lightButtonText}>Registrar Proveedores</Text>
+                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('Proveedores')}>
+                    <Text style={InicioStyles.lightButtonText}>VER PROVEEDORES</Text>
+                </TouchableOpacity>
+            </View>
+            
+            <View style={InicioStyles.buttonContainer}>
+                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('Categorias')}>
+                    <Text style={InicioStyles.lightButtonText}>VER CATEGORIAS</Text>
                 </TouchableOpacity>
             </View>
             <View style={InicioStyles.buttonContainer}>
-                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('CategoriaScreen')}>
-                    <Text style={InicioStyles.lightButtonText}>Registrar Categorías</Text>
+                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('Ventas')}>
+                    <Text style={InicioStyles.lightButtonText}>VER VENTAS</Text>
                 </TouchableOpacity>
             </View>
             <View style={InicioStyles.buttonContainer}>
-                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('VentaScreen')}>
-                    <Text style={InicioStyles.lightButtonText}>Registrar Ventas</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={InicioStyles.buttonContainer}>
-                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('InformeScreen')}>
-                    <Text style={InicioStyles.lightButtonText}>Informes</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={InicioStyles.buttonContainer}>
-                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('CompraScreen')}>
-                    <Text style={InicioStyles.lightButtonText}>Registrar  Compras</Text>
+                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('Compras')}>
+                    <Text style={InicioStyles.lightButtonText}>VER COMPRA</Text>
                 </TouchableOpacity>
             </View>
 
-            <View style={InicioStyles.buttonContainer}>
-                {/* Aquí aplicamos el estilo adicional para el botón "Listados" */}
-                <TouchableOpacity style={InicioStyles.specialButton} onPress={() => navigation.navigate('ListadoScreen')}>
-                    <Text style={InicioStyles.lightButtonText}>Listados</Text>
-                </TouchableOpacity>
-
-                <View style={InicioStyles.buttonContainer}>
-                {/* Aquí aplicamos el estilo adicional para el botón "Listados" */}
-                <TouchableOpacity style={InicioStyles.specialButton} onPress={() => navigation.navigate('Productos')}>
-                    <Text style={InicioStyles.lightButtonText}>Productos</Text>
-
-
+            
                     
-                </TouchableOpacity>
             </View>
-            </View>
-        </View>
+
     );
 }
 

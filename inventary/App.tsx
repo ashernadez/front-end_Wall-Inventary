@@ -18,6 +18,11 @@ import ListComScreen from './src/Presentation/views/listcomp/listcom';
 import ListInfoScreen from './src/Presentation/views/listinforme/listinfo';
 import { ListadoScreen } from './src/Presentation/views/listados/listado';
 import Productos from './src/app/views/Productos/Productos';
+import Proveedores from './src/app/views/Proveedores/Proveedores';
+import Categorias from './src/app/views/Categorias/Categorias';
+import Ventas from './src/app/views/Ventas/Ventas';
+import Compras from './src/app/views/Compras/Compras';
+
 
 
 export type RootStackParamList = {
@@ -37,6 +42,10 @@ export type RootStackParamList = {
   ListProdScreen: undefined;
   ListProvScreen: undefined;
   Productos: undefined;
+  Proveedores: undefined;
+  Categorias: undefined;
+  Ventas: undefined;
+  Compras: undefined;
 };
 
 const Stack = createNativeStackNavigator <RootStackParamList> 
@@ -119,10 +128,35 @@ const App = () => {
           component={ListInfoScreen}
           options={{ headerShown: true, title: 'Listado Informes' }}
         />
+
+
+
+
+
         <Stack.Screen
           name="Productos"
           component={Productos}
           options={{ headerShown: true, title: 'Productos' }}
+        />
+        <Stack.Screen
+          name="Proveedores"
+          component={Proveedores}
+          options={{ headerShown: true, title: 'Proveedores' }}
+        />
+        <Stack.Screen
+          name="Categorias"
+          component={Categorias}
+          options={{ headerShown: true, title: 'Categorias' }}
+        />
+        <Stack.Screen
+          name="Ventas"
+          component={Ventas}
+          options={{ headerShown: true, title: 'Ventas' }}
+        />
+        <Stack.Screen
+          name="Compras"
+          component={Compras}
+          options={{ headerShown: true, title: 'Compras' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

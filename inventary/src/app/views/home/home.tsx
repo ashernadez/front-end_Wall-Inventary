@@ -4,7 +4,7 @@ import { StyleSheet, ScrollView, View, Text, Image } from 'react-native';
 
 const baseUrl: string = 'http://10.0.2.2:8000/api/';
 
-export const Home = () => {
+export const Home2 = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {

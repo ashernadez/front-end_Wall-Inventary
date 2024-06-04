@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Productos from '../views/Productos/Productos'; // Asegúrate de que esta ruta sea correcta
 import { SignIn } from '../views/auth';
-import { Home } from '../views/home/home';
+import { Home2 } from '../views/home/home';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +17,7 @@ export const AppRouter = () => {
           name="Auth"
           component={SignIn}
         />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Home" component={Home2} />
         <Stack.Screen name="Productos" component={Productos} />
       </Stack.Navigator>
     </NavigationContainer>
