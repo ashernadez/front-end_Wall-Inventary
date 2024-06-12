@@ -1,58 +1,66 @@
-/* eslint-disable prettier/prettier */
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, ScrollView, View, Text, Image } from 'react-native';
+import React, { useEffect,useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
-const baseUrl: string = 'http://10.0.2.2:8000/api/';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../../../App';
+import ViewModel from './viewModel';
+import { CustomTextInput } from '../../../Presentation/component/CustomTextInput';
+import styles from './Styles';
 
-export const Home2 = () => {
-  const [products, setProducts] = useState([]);
+export const HomeScreen = () => {
+    const { documento, password, onChange } = ViewModel();
+    const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
-  useEffect(() => {
-    (async function () {
-      try {
-        const response = await fetch(baseUrl + 'products', {
-          method: 'GET',
-        });
-        const { data } = await response.json();
-        setProducts(data);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, []);
+    return (
+        <View style={styles.container}>
+            <Image
+                source={require('../../../../assets/fondor.jpeg')}
+                style={styles.imageBackground}
+            />
+            <View style={styles.logoContainer}>
+                <Image
+                    source={require('../../../../assets/logosin.png')}
+                    style={styles.logoImage}
+                />
+                <Text style={styles.logoText}>Wall-Inventary</Text>
+            </View>
 
-  return (
-    <View style={styles.container}>
-       <ScrollView horizontal={true} style={styles.body}>
-        {products.map((item, key) => (
-          <View key={key} style={styles.box}>
-          </View>
-        ))}
-      </ScrollView>
-    </View>
-  );
-};
+            <View style={styles.form}>
+                <Text style={styles.formText}>Ingresar</Text>
+                <View style={styles.formContainer}>
+                    <CustomTextInput
+                        image={require('../../../../assets/usua.png')}
+                        placeholder='Numero documento'
+                        keyboardType='numeric'
+                        property='documento'
+                        onChangeText={onChange}
+                        value={documento}
+                    />
+                    <CustomTextInput
+                        image={require('../../../../assets/contra.png')}
+                        placeholder='Contraseña'
+                        keyboardType='default'
+                        property='password'
+                        onChangeText={onChange}
+                        value={password}
+                        secureTextEntry={true}
+                    />
+                </View>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingHorizontal: 10,
-  },
-  body:{
-    marginTop:10,
-    flexDirection: 'row',
-  },
-  box:{
-    flex:1,
-    height: 50,
-    width: 160,
-  },
-  textList: {
-    fontSize: 25,
-    color:'blue',
-  },
-  image:{
-   width: 136,
-   height: 108,
-  },
-});
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity 
+                        style={styles.button}
+                        onPress={() => {
+                            console.log('Document: ' + documento);
+                            console.log('Password: ' + password);
+                            navigation.navigate('InicioScreen'); // Navega a InicioScreen
+                        }}
+                    >
+                        <Text style={styles.buttonText}>INICIAR SESION</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        </View>
+    );
+}

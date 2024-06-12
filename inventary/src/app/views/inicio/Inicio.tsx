@@ -5,7 +5,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
 
 import InicioStyles from './Iniciostyles'; // Importar los estilos de Inicio
-import { Home2 } from '../../../app/views/home/home';
+import { Home2 } from '../home/home';
 
 export const InicioScreen = () => {
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
@@ -54,6 +54,11 @@ export const InicioScreen = () => {
             <View style={InicioStyles.buttonContainer}>
                 <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('Compras')}>
                     <Text style={InicioStyles.lightButtonText}>VER COMPRA</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={InicioStyles.buttonContainer}>
+                <TouchableOpacity style={InicioStyles.lightButton} onPress={() => navigation.navigate('Informes')}>
+                    <Text style={InicioStyles.lightButtonText}>VER INFORMES</Text>
                 </TouchableOpacity>
             </View>
 

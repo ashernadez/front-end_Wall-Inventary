@@ -8,7 +8,7 @@ interface Compra {
   f_compra: string;
 }
 
-const baseUrl: string = 'http://192.168.10.14/ApiRestProjet/ApiRestSgi/public/api/';
+const baseUrl: string = 'http://192.168.10.14/ApiRestProjet/ApiRestSgi/public/api/Compras';
 
 const useCompras = () => {
   const [compras, setCompras] = useState<Compra[]>([]);
@@ -18,7 +18,7 @@ const useCompras = () => {
   useEffect(() => {
     const fetchCompras = async () => {
       try {
-        const response = await fetch(baseUrl + 'compras', {
+        const response = await fetch(baseUrl, {
           method: 'GET',
         });
         if (!response.ok) {
