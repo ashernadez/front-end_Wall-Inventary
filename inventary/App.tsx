@@ -4,11 +4,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen } from './src/app/views/home/home';
 import { InicioScreen } from './src/app/views/inicio/Inicio';
 import Productos from './src/app/views/Productos/Productos';
-import Proveedores from './src/app/views/Proveedores/Proveedores';
 import Categorias from './src/app/views/Categorias/Categorias';
 import Ventas from './src/app/views/Ventas/Ventas';
 import Compras from './src/app/views/Compras/Compras';
 import Informes from './src/app/views/Informes/Informes';
+import Proveedores from './src/app/views/Proveedores/Proveedores';
 
 export type RootStackParamList = {
   HomeScreen: undefined;
@@ -46,6 +46,7 @@ const App = () => {
           component={Proveedores}
           options={{ headerShown: true, title: 'Proveedores' }}
         />
+
         <Stack.Screen
           name="Categorias"
           component={Categorias}

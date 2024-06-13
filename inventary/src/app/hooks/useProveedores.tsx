@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 
 interface Proveedor {
-  id: string;
+  id: number;
+  user_id: number;
   nombre: string;
   telefono: string;
   direccion: string;
   correo: string;
+  created_at: string | null;
+  updated_at: string | null;
 }
 
 const baseUrl: string = 'http://192.168.10.14/ApiRestProjet/ApiRestSgi/public/api/';
@@ -21,9 +24,12 @@ const useProveedores = () => {
         const response = await fetch(baseUrl + 'Proveedores', {
           method: 'GET',
         });
+        if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+        }
         const data = await response.json();
         setProveedores(data);
-      } catch (err: any) {
+      } catch (err:any) {
         setError(err.message);
       } finally {
         setLoading(false);

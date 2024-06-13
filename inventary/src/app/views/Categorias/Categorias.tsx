@@ -1,13 +1,15 @@
+// components/Categorias.js
+
 import React from 'react';
 import { ScrollView, View, Text, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useNavigation } from '@react-navigation/native'; // Importa el hook useNavigation
-import useCategorias from '../../hooks/useCategorias';
-import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
+import useCategorias from '../../hooks/useCategorias';  // Importa el hook useCategorias
+import styles from './styles';  // Importa los estilos
 
 const Categorias = () => {
-  const { categorias, loading, error } = useCategorias();
-  const navigation = useNavigation(); // Obtiene la navegación
+  const { categorias, loading, error } = useCategorias();  // Usa el hook useCategorias para obtener categorias, loading y error
+  const navigation = useNavigation();  // Obtiene la navegación desde React Navigation
 
   if (loading) {
     return <ActivityIndicator size="large" color="#0000ff" />;
@@ -18,7 +20,7 @@ const Categorias = () => {
   }
 
   const handlePress = () => {
-    navigation.goBack(); 
+    navigation.goBack();  // Función para manejar la navegación hacia atrás
   };
 
   return (

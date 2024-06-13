@@ -5,7 +5,6 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
 
 import InicioStyles from './Iniciostyles'; // Importar los estilos de Inicio
-import { Home2 } from '../home/home';
 
 export const InicioScreen = () => {
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();

@@ -1,13 +1,13 @@
 import React from 'react';
 import { ScrollView, View, Text, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useNavigation } from '@react-navigation/native'; // Importa el hook useNavigation
+import { useNavigation } from '@react-navigation/native';
 import useProductos from '../../hooks/useProductos';
 import styles from './Styles';
 
 const Productos = () => {
   const { productos, loading, error } = useProductos();
-  const navigation = useNavigation(); // Obtiene la navegación  
+  const navigation = useNavigation();
 
   if (loading) {
     return <ActivityIndicator size="large" color="#0000ff" />;
@@ -18,12 +18,12 @@ const Productos = () => {
   }
 
   const handlePress = () => {
-    navigation.goBack(); 
+    navigation.goBack();
   };
 
   return (
     <LinearGradient
-      colors={['#1E90FF', '#003366']} // Colores azules: azul oscuro y azul claro
+      colors={['#1E90FF', '#003366']}
       style={styles.container}
     >
       <ScrollView style={styles.body}>
