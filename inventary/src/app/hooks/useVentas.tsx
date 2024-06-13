@@ -7,8 +7,6 @@ interface Venta {
   f_venta: string;
   producto_id: number;
   c_compra: number;
-  created_at: string | null;
-  updated_at: string | null;
 }
 
 const baseUrl: string = 'http://192.168.10.14/ApiRestProjet/ApiRestSgi/public/api/';

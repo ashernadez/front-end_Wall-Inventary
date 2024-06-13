@@ -30,12 +30,11 @@ const Ventas = () => {
         {ventas.map((venta, index) => (
           <View key={index} style={styles.box}>
             <Text style={styles.textList}>Id: {venta.id}</Text>
+            <Text style={styles.textList}>User_Id: {venta.user_id}</Text>
             <Text style={styles.textList}>Valor de la Venta: {venta.v_venta}</Text>
             <Text style={styles.textList}>Fecha de Venta: {venta.f_venta}</Text>
             <Text style={styles.textList}>Producto ID: {venta.producto_id}</Text>
             <Text style={styles.textList}>Cantidad de Compra: {venta.c_compra}</Text>
-            <Text style={styles.textList}>created_at: {venta.created_at}</Text>
-            <Text style={styles.textList}>updated_at: {venta.updated_at}</Text>
           </View>
         ))}
 

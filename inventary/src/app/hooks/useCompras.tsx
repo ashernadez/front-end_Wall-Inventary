@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 
 interface Compra {
-  id: string;
-  proveedor_id: string;
-  producto_id: string;
-  v_compra: number;
+  id: number;
+  user_id: number;
+  v_compra: string;
   f_compra: string;
+  producto_id: number;
+  c_compra: number;
 }
 
-const baseUrl: string = 'http://192.168.10.14/ApiRestProjet/ApiRestSgi/public/api/Compras';
+const baseUrl: string = 'http://192.168.10.14/ApiRestProjet/ApiRestSgi/public/api/';
 
 const useCompras = () => {
   const [compras, setCompras] = useState<Compra[]>([]);
@@ -18,11 +19,11 @@ const useCompras = () => {
   useEffect(() => {
     const fetchCompras = async () => {
       try {
-        const response = await fetch(baseUrl, {
+        const response = await fetch(baseUrl + 'Compra', {
           method: 'GET',
         });
         if (!response.ok) {
-          throw new Error('Error al cargar las compras');
+          throw new Error(`Error: ${response.statusText}`);
         }
         const data = await response.json();
         setCompras(data);

@@ -4,8 +4,6 @@ interface Categoria {
   id: number;
   user_id: number;
   Nombre: string;
-  created_at: string | null;
-  updated_at: string | null;
 }
 
 const baseUrl: string = 'http://192.168.10.14/ApiRestProjet/ApiRestSgi/public/api/';
@@ -26,7 +24,7 @@ const useCategorias = () => {
         }
         const data = await response.json();
         setCategorias(data);
-      } catch (err:any) {
+      } catch (err: any) {
         setError(err.message);
       } finally {
         setLoading(false);

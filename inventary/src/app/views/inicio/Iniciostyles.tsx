@@ -13,17 +13,17 @@ const InicioStyles = StyleSheet.create({
     }, 
     logoContainer: { 
         alignSelf: 'center', 
-        marginTop: '1%',  // Ajusta este valor para mover el logo más arriba
+        marginTop: '5%',  // Ajusta este valor para mover el logo más arriba
         alignItems: 'center',
     }, 
     logoImage: { 
-        width: 150, 
-        height: 145, 
+        width: 165, 
+        height: 165, 
     }, 
     logoText: { 
         color: '#000', 
         textAlign: 'center', 
-        fontSize: 25, 
+        fontSize: 26, 
         marginTop: -2, 
         fontWeight: 'bold', 
     }, 

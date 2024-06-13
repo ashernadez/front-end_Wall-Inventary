@@ -2,6 +2,7 @@
 
   interface Producto {
     id: number; 
+    user_id: number; 
     NombreP: string;
     Descripcion: string;
     Precio: number;

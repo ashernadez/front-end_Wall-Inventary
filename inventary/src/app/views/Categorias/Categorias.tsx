@@ -1,15 +1,13 @@
-// components/Categorias.js
-
 import React from 'react';
 import { ScrollView, View, Text, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
-import useCategorias from '../../hooks/useCategorias';  // Importa el hook useCategorias
-import styles from './styles';  // Importa los estilos
+import useCategorias from '../../hooks/useCategorias';  
+import styles from './styles';  
 
 const Categorias = () => {
-  const { categorias, loading, error } = useCategorias();  // Usa el hook useCategorias para obtener categorias, loading y error
-  const navigation = useNavigation();  // Obtiene la navegación desde React Navigation
+  const { categorias, loading, error } = useCategorias(); 
+  const navigation = useNavigation();  
 
   if (loading) {
     return <ActivityIndicator size="large" color="#0000ff" />;
@@ -18,10 +16,6 @@ const Categorias = () => {
   if (error) {
     return <Text>Error: {error}</Text>;
   }
-
-  const handlePress = () => {
-    navigation.goBack();  // Función para manejar la navegación hacia atrás
-  };
 
   return (
     <LinearGradient
@@ -32,16 +26,18 @@ const Categorias = () => {
         {categorias.map((categoria, index) => (
           <View key={index} style={styles.box}>
             <Text style={styles.textList}>Id: {categoria.id}</Text>
+            <Text style={styles.textList}>User ID: {categoria.user_id}</Text>
             <Text style={styles.textList}>Nombre: {categoria.Nombre}</Text>
-            <Text style={styles.textList}>created_at: {categoria.created_at}</Text>
-            <Text style={styles.textList}>updated_at: {categoria.updated_at}</Text>
           </View>
         ))}
-
-        <TouchableOpacity onPress={handlePress} style={styles.buttonContainer}>
-          <Text style={styles.ButtonText}>ATRAS</Text>
-        </TouchableOpacity>
       </ScrollView>
+
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}
+        style={styles.buttonContainer}
+      >
+        <Text style={styles.ButtonText}>ATRAS</Text>
+      </TouchableOpacity>
     </LinearGradient>
   );
 };

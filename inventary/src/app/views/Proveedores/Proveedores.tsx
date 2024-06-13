@@ -30,12 +30,11 @@ const Proveedores = () => {
         {proveedores.map((proveedor, index) => (
           <View key={index} style={styles.box}>
             <Text style={styles.textList}>Id: {proveedor.id}</Text>
+            <Text style={styles.textList}>User_Id: {proveedor.user_id}</Text>
             <Text style={styles.textList}>Nombre: {proveedor.nombre}</Text>
             <Text style={styles.textList}>Teléfono: {proveedor.telefono}</Text>
             <Text style={styles.textList}>Dirección: {proveedor.direccion}</Text>
             <Text style={styles.textList}>Correo: {proveedor.correo}</Text>
-            <Text style={styles.textList}>created_at: {proveedor.created_at}</Text>
-            <Text style={styles.textList}>updated_at: {proveedor.updated_at}</Text>
           </View>
         ))}
 

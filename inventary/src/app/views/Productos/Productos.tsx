@@ -30,6 +30,7 @@ const Productos = () => {
         {productos.map((producto, index) => (
           <View key={index} style={styles.box}>
             <Text style={styles.textList}>Id: {producto.id}</Text>
+            <Text style={styles.textList}>User_Id: {producto.user_id}</Text>
             <Text style={styles.textList}>Nombre: {producto.NombreP}</Text>
             <Text style={styles.textList}>Descripción: {producto.Descripcion}</Text>
             <Text style={styles.textList}>Precio: {producto.Precio}</Text>

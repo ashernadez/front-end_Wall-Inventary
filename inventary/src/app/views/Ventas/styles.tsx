@@ -3,50 +3,40 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingVertical: 10,
-    backgroundColor: '#f0f0f0', // Cambiado el color de fondo
   },
   body: {
-    marginTop: 10,
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
+    paddingTop: 20,
   },
   box: {
-    flex: 1,
-    borderWidth: 1,
-    borderColor: '#010101',
     backgroundColor: '#ffffff',
-    borderRadius: 20,
+    borderRadius: 10,
     padding: 15,
-    marginVertical: 8,
+    marginBottom: 15,
     shadowColor: '#000000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
-    elevation: 2,
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    elevation: 3,
   },
   textList: {
     fontSize: 16,
     color: '#000000',
-    marginBottom: 6,
+    marginBottom: 5,
   },
   buttonContainer: {
-    flex: 1,
-    justifyContent: 'center',
+    borderRadius: 10,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
     alignItems: 'center',
     marginTop: 20,
-  },
-  backButton: {
-    backgroundColor: '#7092EB',
-    paddingVertical: 10,
-    paddingHorizontal: 10,
-    borderRadius: 10,
-    flexDirection: 'row', // Alinear ícono y texto horizontalmente
-    alignItems: 'center', // Alinear elementos verticalmente
+    marginBottom: 40,
+    alignSelf: 'center',
   },
   ButtonText: {
-    fontSize: 16,
+    fontSize: 18,
     color: '#FFFFFF',
-    marginLeft: 10, // Espacio entre el ícono y el texto
+    fontWeight: 'bold',
   },
 });
 

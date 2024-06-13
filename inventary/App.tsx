@@ -7,7 +7,6 @@ import Productos from './src/app/views/Productos/Productos';
 import Categorias from './src/app/views/Categorias/Categorias';
 import Ventas from './src/app/views/Ventas/Ventas';
 import Compras from './src/app/views/Compras/Compras';
-import Informes from './src/app/views/Informes/Informes';
 import Proveedores from './src/app/views/Proveedores/Proveedores';
 
 export type RootStackParamList = {
@@ -61,12 +60,6 @@ const App = () => {
           name="Compras"
           component={Compras}
           options={{ headerShown: true, title: 'Compras' }}
-        />
-
-<Stack.Screen
-          name="Informes"
-          component={Informes}
-          options={{ headerShown: true, title: 'Informes' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
