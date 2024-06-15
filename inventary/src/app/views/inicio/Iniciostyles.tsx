@@ -17,8 +17,8 @@ const InicioStyles = StyleSheet.create({
         alignItems: 'center',
     }, 
     logoImage: { 
-        width: 165, 
-        height: 165, 
+        width: 150, 
+        height: 150,
     }, 
     logoText: { 
         color: 'white', 
@@ -28,8 +28,8 @@ const InicioStyles = StyleSheet.create({
         fontWeight: 'bold', 
     }, 
     buttonContainer: { 
-        marginBottom: 15,
-        marginTop: 25, 
+        marginTop: 30, 
+        marginBottom: 45,
         alignItems: 'center',
     },
     buttonGroup: { // Estilos para el grupo de botones
@@ -38,7 +38,6 @@ const InicioStyles = StyleSheet.create({
         borderColor: '#000',
         borderWidth: 1, // Añadir un borde negro
         justifyContent: 'space-around', // Espacio uniforme entre los botones
-        marginBottom: 0, // Espacio inferior entre grupos de botones
     },
     lightButton: {
         backgroundColor: '#E0F7FA', // Cambiar el color del botón aquí
