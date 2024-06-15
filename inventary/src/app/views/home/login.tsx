@@ -14,19 +14,18 @@ export const HomeLoginScreen = () => {
     return (
         <View style={styles.container}>
             <Image
-                source={require('../../../../assets/fondor.jpeg')}
+                source={require('../../../../assets/Fondo4.jpeg')}
                 style={styles.imageBackground}
             />
             <View style={styles.logoContainer}>
                 <Image
-                    source={require('../../../../assets/logosin.png')}
+                    source={require('../../../../assets/logoblanco.png')}
                     style={styles.logoImage}
                 />
-                <Text style={styles.logoText}>Wall-Inventary</Text>
             </View>
 
             <View style={styles.form}>
-                <Text style={styles.formText}>Ingresar</Text>
+                <Text style={styles.formText}>¡Inicia sesion con nosotros!</Text>
                 <View style={styles.formContainer}>
                     <CustomTextInput
                         image={require('../../../../assets/usua.png')}

@@ -8,13 +8,11 @@ const Homestyles = StyleSheet.create({
     imageBackground: {
         width: '150%',
         height: '150%',
-        opacity: 0.7,
         bottom: '30%',
     },
     form: {
         width: '100%',
         height: '50%',
-        backgroundColor: '#E7EAEC',
         position: 'absolute',
         bottom: 0,
         borderTopLeftRadius: 40,
@@ -22,16 +20,13 @@ const Homestyles = StyleSheet.create({
         padding: 30,
     },
     formContainer: {
-        backgroundColor: 'white', // Fondo blanco para el recuadro
-        borderRadius: 30,
-        borderColor: '#000',
-        borderWidth: 2,
         padding: 10,
         marginTop: 30,
     },
     formText: {
         fontWeight: 'bold',
         fontSize: 28,
+        textAlign: 'center',
     },
 
     logoContainer: {
@@ -44,9 +39,9 @@ const Homestyles = StyleSheet.create({
         height: 210, // Aumentar el tamaño del logo
     },
     logoText: {
-        color: '#000', // Cambiar el color del texto a negro
+        color: 'white', // Cambiar el color del texto a negro
         textAlign: 'center',
-        fontSize: 20,
+        fontSize: 30,
         marginTop: 10,
         fontWeight: 'bold',
     },

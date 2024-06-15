@@ -39,7 +39,7 @@ const App = () => {
         <Stack.Screen
           name="HomeLoginScreen"
           component={HomeLoginScreen}
-          options={{ headerShown: true, title: 'Bienvenido' }}
+          options={{ headerShown: false }}
         />  
         <Stack.Screen
           name="Productos"
