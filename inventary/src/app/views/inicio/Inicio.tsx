@@ -17,14 +17,14 @@ export const InicioScreen = () => {
     return (
        <View style={InicioStyles.container}>
             <Image
-                source={require('../../../../assets/fondor.jpeg')}
+                source={require('../../../../assets/Fondo2.jpeg')}
                 style={InicioStyles.imageBackground}
             /> 
             <View style={InicioStyles.logoContainer}>
                 <Text style={InicioStyles.logoText}>Bienvenido a Wall-Inventary</Text>
                 <View style={InicioStyles.logoImage}>
                     <Image
-                        source={require('../../../../assets/logosin.png')}
+                        source={require('../../../../assets/logoblanco.png')}
                         style={InicioStyles.imageBackground}
                     />
                 </View>

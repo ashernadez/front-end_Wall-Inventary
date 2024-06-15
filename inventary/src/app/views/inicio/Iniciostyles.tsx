@@ -21,14 +21,15 @@ const InicioStyles = StyleSheet.create({
         height: 165, 
     }, 
     logoText: { 
-        color: '#000', 
+        color: 'white', 
         textAlign: 'center', 
         fontSize: 26, 
         marginTop: -2, 
         fontWeight: 'bold', 
     }, 
     buttonContainer: { 
-        marginTop: 10, 
+        marginBottom: 15,
+        marginTop: 25, 
         alignItems: 'center',
     },
     buttonGroup: { // Estilos para el grupo de botones

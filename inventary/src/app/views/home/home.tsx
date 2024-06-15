@@ -1,66 +1,34 @@
-import React, { useEffect,useState } from 'react';
+import React from 'react';
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
-
-import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../../../App';
-import ViewModel from './viewModel';
-import { CustomTextInput } from '../../../Presentation/component/CustomTextInput';
-import styles from './Styles';
+import styles from './stylesHome';
 
 export const HomeScreen = () => {
-    const { documento, password, onChange } = ViewModel();
-    const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+    const navigation = useNavigation();
 
     return (
         <View style={styles.container}>
+            <Text style={{ color: 'white' }}>Verificación: HomeScreen Rendered</Text>
             <Image
-                source={require('../../../../assets/fondor.jpeg')}
+                source={require('../../../../assets/Fondo4.jpeg')}
                 style={styles.imageBackground}
             />
             <View style={styles.logoContainer}>
                 <Image
-                    source={require('../../../../assets/logosin.png')}
+                    source={require('../../../../assets/logoblanco.png')}
                     style={styles.logoImage}
                 />
-                <Text style={styles.logoText}>Wall-Inventary</Text>
+            </View>
+            <Text style={styles.welcomeText}>¡Bienvenido a Wall-Inventary, tu fuente de inventario más confiable!</Text>
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => navigation.navigate('HomeLoginScreen' as never)}
+                >
+                    <Text style={styles.buttonText}>Continuar</Text>
+                </TouchableOpacity>
             </View>
 
-            <View style={styles.form}>
-                <Text style={styles.formText}>Ingresar</Text>
-                <View style={styles.formContainer}>
-                    <CustomTextInput
-                        image={require('../../../../assets/usua.png')}
-                        placeholder='Numero documento'
-                        keyboardType='numeric'
-                        property='documento'
-                        onChangeText={onChange}
-                        value={documento}
-                    />
-                    <CustomTextInput
-                        image={require('../../../../assets/contra.png')}
-                        placeholder='Contraseña'
-                        keyboardType='default'
-                        property='password'
-                        onChangeText={onChange}
-                        value={password}
-                        secureTextEntry={true}
-                    />
-                </View>
-
-                <View style={styles.buttonContainer}>
-                    <TouchableOpacity 
-                        style={styles.button}
-                        onPress={() => {
-                            console.log('Document: ' + documento);
-                            console.log('Password: ' + password);
-                            navigation.navigate('InicioScreen'); // Navega a InicioScreen
-                        }}
-                    >
-                        <Text style={styles.buttonText}>INICIAR SESION</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
         </View>
     );
 }

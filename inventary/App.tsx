@@ -8,7 +8,7 @@ import Categorias from './src/app/views/Categorias/Categorias';
 import Ventas from './src/app/views/Ventas/Ventas';
 import Compras from './src/app/views/Compras/Compras';
 import Proveedores from './src/app/views/Proveedores/Proveedores';
-
+import { HomeLoginScreen } from './src/app/views/home/login';
 export type RootStackParamList = {
   HomeScreen: undefined;
   InicioScreen: undefined;
@@ -18,6 +18,7 @@ export type RootStackParamList = {
   Ventas: undefined;
   Compras: undefined;
   Informes: undefined;
+  HomeLoginScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator <RootStackParamList> 
@@ -34,6 +35,11 @@ const App = () => {
           name="InicioScreen"
           component={InicioScreen}
           options={{ headerShown: true, title: 'Inicio' }}
+        />  
+        <Stack.Screen
+          name="HomeLoginScreen"
+          component={HomeLoginScreen}
+          options={{ headerShown: true, title: 'Bienvenido' }}
         />  
         <Stack.Screen
           name="Productos"

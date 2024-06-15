@@ -9,7 +9,7 @@ interface Compra {
   c_compra: number;
 }
 
-const baseUrl: string = 'http://192.168.10.14/ApiRestProjet/ApiRestSgi/public/api/';
+const baseUrl: string = 'http://192.168.20.174/ApiRestProjet/ApiRestSgi/public/api/';
 
 const useCompras = () => {
   const [compras, setCompras] = useState<Compra[]>([]);

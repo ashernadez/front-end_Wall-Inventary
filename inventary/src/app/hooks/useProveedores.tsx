@@ -9,7 +9,7 @@ interface Proveedor {
   correo: string;
 }
 
-const baseUrl: string = 'http://192.168.10.14/ApiRestProjet/ApiRestSgi/public/api/';
+const baseUrl: string = 'http://192.168.20.174/ApiRestProjet/ApiRestSgi/public/api/';
 
 const useProveedores = () => {
   const [proveedores, setProveedores] = useState<Proveedor[]>([]);
@@ -19,7 +19,7 @@ const useProveedores = () => {
   useEffect(() => {
     const fetchProveedores = async () => {
       try {
-        const response = await fetch(baseUrl + 'Proveedores', {
+        const response = await fetch(baseUrl + 'Proveedors', {
           method: 'GET',
         });
         if (!response.ok) {

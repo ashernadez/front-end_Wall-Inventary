@@ -3,7 +3,7 @@ import { ScrollView, View, Text, ActivityIndicator, TouchableOpacity } from 'rea
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import useProveedores from '../../hooks/useProveedores';  // Importa el hook useProveedores
-import styles from './Styles';  // Importa los estilos
+import styles from './styles';  // Importa los estilos
 
 const Proveedores = () => {
   const { proveedores, loading, error } = useProveedores();  // Usa el hook useProveedores para obtener proveedores, loading y error

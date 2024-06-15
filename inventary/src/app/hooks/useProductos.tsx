@@ -11,7 +11,7 @@
     proveedor_id: number;
   }
 
-  const baseUrl: string = 'http://192.168.10.14/ApiRestProjet/ApiRestSgi/public/api/';
+  const baseUrl: string = 'http://192.168.20.174/ApiRestProjet/ApiRestSgi/public/api/';
 
   const useProductos = () => {
     const [productos, setProductos] = useState<Producto[]>([]);
