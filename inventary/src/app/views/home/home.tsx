@@ -10,7 +10,7 @@ export const HomeScreen = () => {
         <View style={styles.container}>
             <Text style={{ color: 'white' }}>Verificación: HomeScreen Rendered</Text>
             <Image
-                source={require('../../../../assets/Fondo4.jpeg')}
+                source={require('../../../../assets/Fondo5.jpg')}
                 style={styles.imageBackground}
             />
             <View style={styles.logoContainer}>

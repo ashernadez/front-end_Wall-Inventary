@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginVertical: 20,
         fontWeight: 'bold',
+        marginTop: 180,
     },
     buttonContainer: {
         flex: 1,
