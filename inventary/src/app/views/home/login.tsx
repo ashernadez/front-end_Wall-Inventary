@@ -1,6 +1,6 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Animated } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
 import ViewModel from './viewModel';
@@ -10,6 +10,33 @@ import styles from './Styles';
 export const HomeLoginScreen = () => {
     const { email, password, onChange } = ViewModel();
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+    const floatAnimLogo = useRef(new Animated.Value(0)).current;
+
+    useEffect(() => {
+        // Animación de flotación para el logo
+        Animated.loop(
+            Animated.sequence([
+                Animated.timing(floatAnimLogo, {
+                    toValue: -10,
+                    duration: 1000,
+                    useNativeDriver: true,
+                }),
+                Animated.timing(floatAnimLogo, {
+                    toValue: 10,
+                    duration: 1000,
+                    useNativeDriver: true,
+                }),
+                Animated.timing(floatAnimLogo, {
+                    toValue: 0,
+                    duration: 1000,
+                    useNativeDriver: true,
+                }),
+            ]),
+            {
+                iterations: -1, // Hacer que la animación sea infinita
+            }
+        ).start();
+    }, [floatAnimLogo]);
 
     return (
         <View style={styles.container}>
@@ -17,18 +44,18 @@ export const HomeLoginScreen = () => {
                 source={require('../../../../assets/Fondo4.jpeg')}
                 style={styles.imageBackground}
             />
-            <View style={styles.logoContainer}>
+            <Animated.View style={[styles.logoContainer, { transform: [{ translateY: floatAnimLogo }] }]}>
                 <Image
                     source={require('../../../../assets/logoblanco.png')}
                     style={styles.logoImage}
                 />
-            </View>
+            </Animated.View>
             <View style={styles.form}>
-                <Text style={styles.formText}>¡Inicia sesion con nosotros!</Text>
+                <Text style={styles.formText}>¡Inicia sesión con nosotros!</Text>
                 <View style={styles.formContainer}>
                     <CustomTextInput
                         image={require('../../../../assets/usua.png')}
-                        placeholder='Correo Electronico'
+                        placeholder='Correo Electrónico'
                         keyboardType='default'
                         property='email'
                         onChangeText={onChange}
@@ -44,17 +71,16 @@ export const HomeLoginScreen = () => {
                         secureTextEntry={true}
                     />
                 </View>
-
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity 
                         style={styles.button}
                         onPress={() => {
-                            console.log('Correo Electronico: ' + email);
+                            console.log('Correo Electrónico: ' + email);
                             console.log('Password: ' + password);
                             navigation.navigate('InicioScreen'); // Navega a InicioScreen
                         }}
                     >
-                        <Text style={styles.buttonText}>INICIAR SESION</Text>
+                        <Text style={styles.buttonText}>INICIAR SESIÓN</Text>
                     </TouchableOpacity>
                 </View>
             </View>
