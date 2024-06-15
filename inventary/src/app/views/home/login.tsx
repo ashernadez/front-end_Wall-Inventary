@@ -8,7 +8,7 @@ import { CustomTextInput } from '../../../Presentation/component/CustomTextInput
 import styles from './Styles';
 
 export const HomeLoginScreen = () => {
-    const { documento, password, onChange } = ViewModel();
+    const { email, password, onChange } = ViewModel();
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
     return (
@@ -23,17 +23,16 @@ export const HomeLoginScreen = () => {
                     style={styles.logoImage}
                 />
             </View>
-
             <View style={styles.form}>
                 <Text style={styles.formText}>¡Inicia sesion con nosotros!</Text>
                 <View style={styles.formContainer}>
                     <CustomTextInput
                         image={require('../../../../assets/usua.png')}
-                        placeholder='Numero documento'
-                        keyboardType='numeric'
-                        property='documento'
+                        placeholder='Correo Electronico'
+                        keyboardType='default'
+                        property='email'
                         onChangeText={onChange}
-                        value={documento}
+                        value={email}
                     />
                     <CustomTextInput
                         image={require('../../../../assets/contra.png')}
@@ -50,7 +49,7 @@ export const HomeLoginScreen = () => {
                     <TouchableOpacity 
                         style={styles.button}
                         onPress={() => {
-                            console.log('Document: ' + documento);
+                            console.log('Correo Electronico: ' + email);
                             console.log('Password: ' + password);
                             navigation.navigate('InicioScreen'); // Navega a InicioScreen
                         }}

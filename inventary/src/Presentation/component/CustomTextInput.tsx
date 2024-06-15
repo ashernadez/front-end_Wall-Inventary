@@ -39,20 +39,32 @@ export const CustomTextInput = ({
  
 const styles = StyleSheet.create({ 
     formIcon: { 
-        width: 25, 
-        height: 25, 
-        marginTop: 5, 
+        width: 30, 
+        height: 30, 
+        marginTop: 5,
+        marginLeft: 7, 
  
     }, 
     formInput: { 
         flexDirection: 'row', 
-        marginTop: 30, 
- 
-    }, 
+        marginTop: 20,
+        marginBottom: 5,
+        alignItems: 'center', // Centrar verticalmente los elementos dentro del contenedor
+        backgroundColor: '#fff', // Fondo blanco para el campo de texto
+        borderRadius: 35, // Borde redondeado
+        padding: 10, // Relleno interno
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 2,
+        elevation: 2, // Sombra para Android
+    },
     formTextInput: { 
         flex: 1, 
-        borderBottomWidth: 1, 
-        borderBottomColor: '#AAAAAA', 
+        borderBottomWidth: 0, // Quitar borde inferior
         marginLeft: 15, 
-    } 
+        paddingVertical: 10, // Relleno vertical
+        fontSize: 16, 
+        color: '#333', // Texto oscuro
+    },
 }) 

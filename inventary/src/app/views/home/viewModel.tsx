@@ -1,7 +1,7 @@
 import React, {useState} from 'react' 
 const ViewModel = () => { 
 const [values, setValues] = useState({ 
-documento:'', 
+email:'', 
 password:'', 
     }); 
      
