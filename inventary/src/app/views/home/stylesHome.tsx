@@ -15,12 +15,12 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-start',
         alignItems: 'center',
-        marginTop: 50, // Ajusta el margen según sea necesario
+        marginTop: 20, // Ajusta el margen según sea necesario
 
     },
     logoImage: {
-        width: 200,
-        height: 200,
+        width: 180,
+        height: 180,
         resizeMode: 'contain',
     },
     welcomeText: {

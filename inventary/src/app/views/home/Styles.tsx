@@ -15,7 +15,7 @@ const Homestyles = StyleSheet.create({
         width: '100%',
         height: '50%',
         position: 'absolute',
-        bottom: 0,
+        bottom: 60,
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
         padding: 30,
@@ -32,6 +32,7 @@ const Homestyles = StyleSheet.create({
         textAlign: 'center',
         color: 'white',
     },
+    
 
     logoContainer: {
         position: 'absolute',
@@ -40,21 +41,15 @@ const Homestyles = StyleSheet.create({
     },
 
     logoImage: {
-        width: 210, // Aumentar el tamaño del logo
-        height: 210, // Aumentar el tamaño del logo
+        width: 180, // Aumentar el tamaño del logo
+        height: 180, // Aumentar el tamaño del logo
     },
 
-    logoText: {
-        color: 'white', // Cambiar el color del texto a negro
-        textAlign: 'center',
-        fontSize: 30,
-        marginTop: 10,
-        fontWeight: 'bold',
-    },
     buttonContainer: {
         marginTop: 30,
         alignItems: 'center',
     },
+
     button: {
         backgroundColor: 'white',  // Color diferente
         width: 180,                   // Ancho del botón

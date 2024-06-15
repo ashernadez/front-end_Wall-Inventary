@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     }, 
     formInput: { 
         flexDirection: 'row', 
-        marginTop: 20,
+        marginTop: 5,
         marginBottom: 5,
         alignItems: 'center', // Centrar verticalmente los elementos dentro del contenedor
         backgroundColor: '#fff', // Fondo blanco para el campo de texto
