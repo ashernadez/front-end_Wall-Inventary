@@ -46,7 +46,7 @@ export const HomeLoginScreen = () => {
             />
             <Animated.View style={[styles.logoContainer, { transform: [{ translateY: floatAnimLogo }] }]}>
                 <Image
-                    source={require('../../../../assets/logoblanco.png')}
+                    source={require('../../../../assets/newlogo.png')}
                     style={styles.logoImage}
                 />
             </Animated.View>
