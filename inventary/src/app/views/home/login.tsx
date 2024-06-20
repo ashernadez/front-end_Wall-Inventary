@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, Image, TouchableOpacity, Animated } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -11,6 +11,11 @@ export const HomeLoginScreen = () => {
     const { email, password, onChange } = ViewModel();
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
     const floatAnimLogo = useRef(new Animated.Value(0)).current;
+    const [secureTextEntry, setSecureTextEntry] = useState(true);
+
+    const toggleSecureEntry = () => {
+        setSecureTextEntry(!secureTextEntry);
+    };
 
     useEffect(() => {
         // Animación de flotación para el logo
@@ -68,7 +73,8 @@ export const HomeLoginScreen = () => {
                         property='password'
                         onChangeText={onChange}
                         value={password}
-                        secureTextEntry={true}
+                        secureTextEntry={secureTextEntry}
+                        toggleSecureEntry={toggleSecureEntry}
                     />
                 </View>
                 <View style={styles.buttonContainer}>
@@ -86,4 +92,4 @@ export const HomeLoginScreen = () => {
             </View>
         </View>
     );
-}
+};
