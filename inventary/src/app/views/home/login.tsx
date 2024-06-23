@@ -4,18 +4,76 @@ import { View, Text, Image, TouchableOpacity, Animated } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App';
 import ViewModel from './viewModel';
+import useUser from '../../hooks/useUser'; // Importa el hook useCompras
 import { CustomTextInput } from '../../../Presentation/component/CustomTextInput';
 import styles from './Styles';
 
 export const HomeLoginScreen = () => {
+        
     const { email, password, onChange } = ViewModel();
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
     const floatAnimLogo = useRef(new Animated.Value(0)).current;
     const [secureTextEntry, setSecureTextEntry] = useState(true);
 
+    const [userValid, setUserValid] = useState(false);
+
     const toggleSecureEntry = () => {
         setSecureTextEntry(!secureTextEntry);
     };
+
+    // Pasar a hooks o servicios
+    const baseUrl: string = 'http://192.168.0.16/ApiRestProjet/ApiRestSgi/public/api/';    
+    const fetchLogin = async () => {
+        try {
+          const response = await fetch(baseUrl + 'user/login', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
+            });            
+
+          if (!response.ok) {
+            console.log("Error al enviar el mensaje");
+          }          
+
+          const data = await response.json();                    
+          return data["status"];                    
+        } catch (err: any) {            
+            return err.status;
+        } 
+    };
+    ////
+
+
+      
+    const InicioSesion = async () => {               
+        let result = await fetchLogin();
+
+        if(result === 200){
+            setUserValid(true);
+          }else{
+            setUserValid(false);
+          }
+
+        if(userValid){
+            navigation.navigate('InicioScreen'); // Navega a InicioScreen
+        }
+        else{
+            setUserValid(false);
+        }
+    };
+
+    //
+    useEffect(() => {
+        if (userValid) {
+            navigation.navigate('InicioScreen'); // Navega a InicioScreen
+        }
+    }, [userValid, navigation]);
+
 
     useEffect(() => {
         // Animación de flotación para el logo
@@ -42,6 +100,8 @@ export const HomeLoginScreen = () => {
             }
         ).start();
     }, [floatAnimLogo]);
+
+
 
     return (
         <View style={styles.container}>
@@ -81,14 +141,21 @@ export const HomeLoginScreen = () => {
                     <TouchableOpacity 
                         style={styles.button}
                         onPress={() => {
-                            console.log('Correo Electrónico: ' + email);
-                            console.log('Password: ' + password);
-                            navigation.navigate('InicioScreen'); // Navega a InicioScreen
+                            //console.log('Correo Electrónico: ' + email);
+                            //console.log('Password: ' + password);
+                            InicioSesion();
+                            //navigation.navigate('InicioScreen'); // Navega a InicioScreen
                         }}
                     >
                         <Text style={styles.buttonText}>INICIAR SESIÓN</Text>
                     </TouchableOpacity>
                 </View>
+                {userValid ? (
+                    <></>
+                    ) : (
+                        <Text style={styles.formText}>¡Usuario Invalido!</Text>
+                    )}
+                
             </View>
         </View>
     );
