@@ -22,7 +22,7 @@ export const HomeLoginScreen = () => {
     };
 
     // Pasar a hooks o servicios
-    const baseUrl: string = 'http://192.168.0.16/ApiRestProjet/ApiRestSgi/public/api/';    
+    const baseUrl: string = 'http://192.168.20.174/ApiRestProjet/ApiRestSgi/public/api/';    
     const fetchLogin = async () => {
         try {
           const response = await fetch(baseUrl + 'user/login', {

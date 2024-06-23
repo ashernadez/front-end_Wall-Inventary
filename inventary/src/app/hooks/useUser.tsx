@@ -6,7 +6,7 @@ interface User {
     password: string  
 }
 
-const baseUrl: string = 'http://192.168.0.16/ApiRestProjet/ApiRestSgi/public/api/';
+const baseUrl: string = 'http://192.168.20.174/ApiRestProjet/ApiRestSgi/public/api/';
 
 const useUser = (data: User) => {
   const [user, setUser] = useState<User>(data);
