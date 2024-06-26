@@ -22,7 +22,7 @@ export const HomeLoginScreen = () => {
     };
 
     // Pasar a hooks o servicios
-    const baseUrl: string = 'http://192.168.20.174/ApiRestProjet/ApiRestSgi/public/api/';    
+    const baseUrl: string = 'https://wallinventary.azurewebsites.net/api/';    
     const fetchLogin = async () => {
         try {
           const response = await fetch(baseUrl + 'user/login', {
@@ -32,7 +32,7 @@ export const HomeLoginScreen = () => {
                 },
                 body: JSON.stringify({
                     email: email,
-                    password: password
+                    password_app: password
                 })
             });            
 
@@ -153,7 +153,7 @@ export const HomeLoginScreen = () => {
                 {userValid ? (
                     <></>
                     ) : (
-                        <Text style={styles.formText}>¡Usuario Invalido!</Text>
+                        <Text style={styles.formText}></Text>
                     )}
                 
             </View>
